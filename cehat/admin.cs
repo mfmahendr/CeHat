@@ -6,21 +6,33 @@ using System.Threading.Tasks;
 
 namespace cehat
 {
-    abstract class person
+    puclic abstract class person
     {
 
     }
 
-    class admin : person
+    public class admin : person
     {
-        void login()
+        public void login()
         {
 
         }
 
-        void ubahUsername()
+        public void ubahUsername()
         {
 
         }
     }
+    public class user : person
+    {
+        public void halo()
+        {
+        
+        }
+        
+        public void tambahGejala()
+        {
+        
+        }
+     }
 }

@@ -16,11 +16,14 @@ namespace cehat
         {
             InitializeComponent();
         }
+        private void FormLoading_Load(object sender, EventArgs e)
+        {
 
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            panel2.Width += 3;
-            if (panel2.Width >= 839)
+            panel2.Width += 10;
+            if (panel2.Width >= 759)
             {
                 timer1.Stop();
                 FormLogin login = new FormLogin();
@@ -29,9 +32,6 @@ namespace cehat
             }
         }
 
-        private void FormLoading_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

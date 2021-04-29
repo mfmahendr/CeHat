@@ -7,3 +7,14 @@ D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.Ge
 D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.AssemblyInfoInputs.cache
 D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.AssemblyInfo.cs
 D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.csproj.CoreCompileInputs.cache
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\bin\Debug\net5.0-windows\cehat.exe
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\bin\Debug\net5.0-windows\cehat.deps.json
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\bin\Debug\net5.0-windows\cehat.runtimeconfig.json
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\bin\Debug\net5.0-windows\cehat.runtimeconfig.dev.json
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\bin\Debug\net5.0-windows\cehat.dll
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\bin\Debug\net5.0-windows\ref\cehat.dll
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\bin\Debug\net5.0-windows\cehat.pdb
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.dll
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\ref\cehat.dll
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.pdb
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.genruntimeconfig.cache

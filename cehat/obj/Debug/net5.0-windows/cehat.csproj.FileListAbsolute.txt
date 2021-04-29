@@ -1,0 +1,9 @@
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.csprojAssemblyReference.cache
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormLoading.resources
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormLogin.resources
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.Properties.Resources.resources
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.csproj.GenerateResource.cache
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.AssemblyInfoInputs.cache
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.AssemblyInfo.cs
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.csproj.CoreCompileInputs.cache

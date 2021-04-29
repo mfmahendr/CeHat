@@ -38,18 +38,18 @@ namespace cehat
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(-4, 433);
+            this.panel1.Location = new System.Drawing.Point(0, 433);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(765, 21);
+            this.panel1.Size = new System.Drawing.Size(761, 21);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel2.Location = new System.Drawing.Point(-4, 433);
+            this.panel2.Location = new System.Drawing.Point(0, 433);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 27);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 2;
             // 
             // timer1
             // 

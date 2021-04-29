@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,31 +6,63 @@ using System.Threading.Tasks;
 
 namespace cehat
 {
-    public abstract class person
+    public abstract class Person
     {
-        private string name;
+        private int id;
+        
     }
 
-    public class admin : person
+    public class Admin : Person
     {
-        public void login()
+        private string username;
+        private string password;
+
+        public Admin(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+
+        public bool IsPassCorrect(string inputPass)
+        {
+            if (inputPass.Equals(password))
+                return true;
+            else
+                return false;
+        }
+        public bool IsUserCorrect(string inputPass)
+        {
+            if (inputPass.Equals(username))
+                return true;
+            else
+                return false;
+        }
+
+        public void Login()
         {
 
         }
 
-        public void ubahUsername()
+        public void UbahUsername()
         {
 
         }
     }
-    public class user : person
+    public class User : Person
     {
-        public void halo()
+        private string nama;
+
+        public User(string nama)
         {
-        
+            this.nama = nama;
+        }
+
+        public void Halo(string nama)
+        {
+            Console.Write($"Halo {nama}, selamat datang di aplikasi CeHat");
         }
         
-        public void tambahGejala()
+        public void TambahGejala()
         {
         
         }

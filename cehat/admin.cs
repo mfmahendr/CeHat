@@ -38,11 +38,6 @@ namespace cehat
                 return false;
         }
 
-        public void Login()
-        {
-
-        }
-
         public void UbahUsername()
         {
 

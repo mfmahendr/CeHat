@@ -18,7 +18,7 @@ namespace cehat
         }
         private void FormLoading_Load(object sender, EventArgs e)
         {
-
+            pictureBox1.Hide();
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -26,12 +26,15 @@ namespace cehat
             if (panel2.Width >= 759)
             {
                 timer1.Stop();
-                FormLogin login = new FormLogin();
-                login.Show();
-                this.Hide();
+                pictureBox1.Show();
             }
         }
 
-        
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+            this.Hide();
+        }
     }
 }

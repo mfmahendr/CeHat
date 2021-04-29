@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace cehat
 {
-    puclic abstract class person
+    public abstract class person
     {
-
+        private string name;
     }
 
     public class admin : person

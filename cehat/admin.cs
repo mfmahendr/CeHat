@@ -54,7 +54,7 @@ namespace cehat
 
         public void Halo(string nama)
         {
-            Console.Write($"Halo {nama}, selamat datang di aplikasi CeHat");
+            Console.WriteLine($"Halo {nama}, selamat datang di aplikasi CeHat");
         }
         
         public void TambahGejala()

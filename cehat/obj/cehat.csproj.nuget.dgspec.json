@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\Cehat\\cehat\\cehat.csproj": {}
+    "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\CeHat\\cehat\\cehat.csproj": {}
   },
   "projects": {
-    "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\Cehat\\cehat\\cehat.csproj": {
+    "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\CeHat\\cehat\\cehat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\Cehat\\cehat\\cehat.csproj",
+        "projectUniqueName": "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\CeHat\\cehat\\cehat.csproj",
         "projectName": "cehat",
-        "projectPath": "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\Cehat\\cehat\\cehat.csproj",
+        "projectPath": "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\CeHat\\cehat\\cehat.csproj",
         "packagesPath": "C:\\Users\\A S U S\\.nuget\\packages\\",
-        "outputPath": "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\Cehat\\cehat\\obj\\",
+        "outputPath": "D:\\Kuliah\\SEMESTER 2\\Praktikum PBO\\CeHat\\cehat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A S U S\\AppData\\Roaming\\NuGet\\NuGet.Config",

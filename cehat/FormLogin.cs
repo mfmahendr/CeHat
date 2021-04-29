@@ -30,5 +30,11 @@ namespace cehat
             FormLoginUser login_user = new FormLoginUser();
             login_user.Show();
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox2.BackColor = Color.Transparent;
+        }
     }
 }

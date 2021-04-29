@@ -19,11 +19,12 @@ namespace cehat
         private void FormLoading_Load(object sender, EventArgs e)
         {
             pictureBox1.Hide();
+            pictureBox1.BackColor = Color.Transparent;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             panel2.Width += 3;
-            if (panel2.Width >= 759)
+            if (panel2.Width >= 800)
             {
                 timer1.Stop();
                 pictureBox1.Show();

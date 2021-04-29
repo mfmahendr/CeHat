@@ -41,15 +41,15 @@ namespace cehat
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 444);
+            this.panel1.Location = new System.Drawing.Point(-1, 472);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(761, 10);
+            this.panel1.Size = new System.Drawing.Size(801, 10);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel2.Location = new System.Drawing.Point(-1, 444);
+            this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Location = new System.Drawing.Point(-1, 472);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 10);
             this.panel2.TabIndex = 2;
@@ -63,7 +63,7 @@ namespace cehat
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(548, 283);
+            this.pictureBox1.Location = new System.Drawing.Point(588, 299);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(104, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -78,7 +78,7 @@ namespace cehat
             this.BackColor = System.Drawing.Color.Azure;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(759, 453);
+            this.ClientSize = new System.Drawing.Size(800, 480);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

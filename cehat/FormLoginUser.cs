@@ -19,8 +19,7 @@ namespace cehat
 
         private void FormLoginUser_Load(object sender, EventArgs e)
         {
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox2.BackColor = Color.Transparent;
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -34,6 +33,36 @@ namespace cehat
             this.Hide();
             FormLogin login = new FormLogin();
             login.Show();
+        }
+
+
+        // agar form draggable walaupun borderless
+        bool mousedown;
+        private Point offset;
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mousedown = true;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mousedown == true)
+            {
+                Point currentSceenPos = PointToScreen(e.Location);
+                Location = new Point(currentSceenPos.X - offset.X, currentSceenPos.Y - offset.Y);
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mousedown = false;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -19,7 +19,6 @@ namespace cehat
         private void FormLoading_Load(object sender, EventArgs e)
         {
             pictureBox1.Hide();
-            pictureBox1.BackColor = Color.Transparent;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {

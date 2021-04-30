@@ -8,6 +8,7 @@ namespace cehat
 {
     public class Diagnosis
     {
+        /// karena belum ada database
         private string gejala1 = "demam";
         private string gejala2 = "bersin-bersin";
         private string gejala3 = "hidung tersumbat dan berair";
@@ -85,68 +86,67 @@ namespace cehat
 
         }
 
-        public string Soal(string gejala)
+        public static string Soal(string gejala)
         {
             return "Apakah anda mengalami " + gejala +" ?";
         }
 
-        public Penyakit DiagnosisPenyakit() 
+        public static Penyakit DiagnosisPenyakit() 
         {
             Penyakit hasil = null;
 
-            //// lebih kurang begini
+            //// diagnosis tanpa database-nya lebih kurang begini
+            /// mungkin ini nanti dijadikan tempat diagnosis langsung
 
-            // labelXXX.Text = Soal(gejala1);
-            // if(buttonClick_Yes())
-            // {
-            //     labelXXX.Text = Soal(gejala6);
-            //     menanpilkan label
-            //     if(buttonClick_Yes())
-            //     {
-            //          hasil = penyakit2;
-            //     }
-            //     if(buttonClick_No())
-            //     {
-            //          hasil = penyakit1;
-            //     }
-            //  }
-            //
-            //  if(buttonClick_No())
-            //  {
-            //      labelXXX.Text = Soal(gejala10)
-            //      menampilkan label
-            //      if(buttonClick_Yes)
-            //      {
-            //          labelXXX.Text = Soal(gejala8);
-            //          menampilkan label;
-            //          if(buttonClick_Yes)
-            //          {
-            //              hasil = penyakit3;
-            //          }
-            //
-            //          if(buttonClick_No)
-            //          {
-            //              labelXXX.Text = Soal(gejala11);
-            //              menampilkan label;
-            //              if(buttonClick_Yes)
-            //              {
-            //                  hasil = penyakit4
-            //              }
-            //              if(buttonClick_No)
-            //              {
-            //                  hasil = null;
-            //              }
-            //          }
-            //      }
-            //  }
+            /*
+            labelPertanyaan.Text = Soal(gejala1);
+            labelPertanyaan.Show();
+            if (jawaban)
+            {
+                labelPertanyaan.Text = Soal(gejala6);
+                labelPertanyaan.Show();
+                if (jawaban)
+                {
+                    hasil = penyakit2;
+                }
+                else { hasil = penyakit1; }
+            }
+            else
+            {
+                labelPertanyaan.Text = Soal(gejala10);
+                labelPertanyaan.Show();
+                if (jawaban)
+                {
+                    labelPertanyaan.Text = Soal(gejala8);
+                    labelPertanyaan.Show();
+                    if (jawaban)
+                    {
+                        hasil = penyakit3;
+                    }
+                    else
+                    {
+                        labelPertanyaan.Text = Soal(gejala11);
+                        labelPertanyaan.Show();
+                        if (jawaban)
+                        {
+                            hasil = penyakit4;
+                        }
+                        else { hasil = null; }
 
-            return hasil;
+                    }
+                }
+            }
+            */
+
+            return hasil; // semua atribut hasil nantinya ditampilkan ke dalam suatu toolbox
         }
 
-        public void showHasil(Penyakit hasil)
+        public static void showHasil(Penyakit hasil) /// ini lebih tepatnya buat console
         {
-            hasil.ShowInfoPenyakit();
+            hasil.ShowInfoPenyakit(); 
         }
+
+        /// event untuk show hasil diagnosisnya di sini
         
     }
 }

@@ -11,33 +11,45 @@ namespace cehat
         private Obat obat;
         private Gejala gejala;
 
+        public Penyakit(string nama, Gejala gejala, Obat obat = null)
+        {
+            this.nama = nama;
+            this.gejala = gejala;
+            this.obat = obat;
+        }
+
         public bool ShowInfoPenyakit()
         {
-            throw new NotImplementedException();
             bool isSuccess = false;
-
-
+            Console.WriteLine($"Penyakit yang mungkin anda derita: " + nama);
+            Console.WriteLine("Gejala yang biasanya dialami: ");
+            foreach(string i in gejala.GejalaPenyakit)
+            {
+                Console.WriteLine(i);
+            }
+            if (obat != null) 
+            {
+                Console.WriteLine("Saran obat: " + obat.nama);
+                if(obat.Dosis != null)
+                {
+                    Console.WriteLine("Dosis obat: " + obat.Dosis);
+                }
+                if(obat.EfekSamping != null)
+                {
+                    Console.WriteLine("Efek samping:" + obat.EfekSamping);
+                }
+            }
             return isSuccess;
         }
 
         public new bool Tambah(Penyakit penyakit)
         {
             throw new NotImplementedException();
-            bool isSuccess = false;
-
-
-            return isSuccess;
         }
 
         public bool CekInfo(Penyakit penyakit)
         {
             throw new NotImplementedException();
-            bool isSuccess = false;
-            
-
-
-
-            return isSuccess;
         }
     }
 }

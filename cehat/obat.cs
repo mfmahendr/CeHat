@@ -10,8 +10,16 @@ namespace cehat
     {
         private string dosis;
         private string efekSamping;
-
-
+        public string Dosis { get => dosis; set => dosis = value; }
+        public string EfekSamping { get => efekSamping; set => efekSamping = value; }
+    
+        public Obat(string nama, string dosis = null, string efekSamping = null)
+        {
+            this.nama = nama;
+            this.Dosis = dosis;
+            this.EfekSamping = efekSamping;
+        }
 
     }
+
 }

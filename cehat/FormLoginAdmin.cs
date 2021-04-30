@@ -30,6 +30,11 @@ namespace cehat
                 admin.IsPassCorrect(textBoxPassword.Text))
             {
                 MessageBox.Show("Login Berhasil!");
+
+                this.Hide();
+                FormMenuAdmin menus = new FormMenuAdmin();
+                menus.Show();
+ 
             }
 
             else

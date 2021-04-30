@@ -20,3 +20,5 @@ D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.pd
 D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.genruntimeconfig.cache
 D:\Kuliah\SEMESTER 2\Praktikum PBO\Cehat\cehat\obj\Debug\net5.0-windows\cehat.FormLoginAdmin.resources
 D:\Kuliah\SEMESTER 2\Praktikum PBO\Cehat\cehat\obj\Debug\net5.0-windows\cehat.FormLoginUser.resources
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormMenuAdmin.resources
+D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormMenuUser.resources

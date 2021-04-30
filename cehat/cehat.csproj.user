@@ -13,5 +13,11 @@
     <Compile Update="FormLoginUser.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormMenuUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

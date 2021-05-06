@@ -13,7 +13,7 @@ namespace cehat
 
         public Penyakit(string nama, Gejala gejala, Obat obat = null)
         {
-            this.nama = nama;
+            Nama = nama;
             this.gejala = gejala;
             this.obat = obat;
         }
@@ -21,7 +21,7 @@ namespace cehat
         public bool ShowInfoPenyakit()
         {
             bool isSuccess = false;
-            Console.WriteLine($"Penyakit yang mungkin anda derita: " + nama);
+            Console.WriteLine($"Penyakit yang mungkin anda derita: " + Nama);
             Console.WriteLine("Gejala yang biasanya dialami: ");
             foreach(string i in gejala.GejalaPenyakit)
             {
@@ -29,7 +29,7 @@ namespace cehat
             }
             if (obat != null) 
             {
-                Console.WriteLine("Saran obat: " + obat.nama);
+                Console.WriteLine("Saran obat: " + obat.Nama);
                 if(obat.Dosis != null)
                 {
                     Console.WriteLine("Dosis obat: " + obat.Dosis);

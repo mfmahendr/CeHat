@@ -15,9 +15,9 @@ namespace cehat
     
         public Obat(string nama, string dosis = null, string efekSamping = null)
         {
-            this.nama = nama;
-            this.Dosis = dosis;
-            this.EfekSamping = efekSamping;
+            Nama = nama;
+            Dosis = dosis;
+            EfekSamping = efekSamping;
         }
 
     }

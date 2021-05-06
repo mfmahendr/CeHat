@@ -8,8 +8,11 @@ namespace cehat
 {
     public abstract class Informasi
     {
-        public int id;
-        public string nama;
+        private int id;
+        private string nama;
+
+        public int Id { get => id; set => id = value; }
+        public string Nama { get => nama; set => nama = value; }
 
         public void Tambah()
         {

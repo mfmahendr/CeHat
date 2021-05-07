@@ -6,28 +6,13 @@ using System.Threading.Tasks;
 
 namespace cehat
 {
-    public abstract class Person
+    // dibuat abstract karena awalnya belum tahu bagaimana pengimplementasianny
+    // dan juga mungkin bisa jadi class nanti akan ada "akun premium" untuk
+    // pengguna sehingga artinya class person ini nanti bisa diturunkan pada
+    // class akun premium (Open-closed principle)
+    public abstract class Person 
     {
         public int Id { get; set; }
     }
 
-    public class User : Person
-    {
-        private string nama;
-
-        public User(string nama)
-        {
-            this.nama = nama;
-        }
-
-        public void Halo(string nama)
-        {
-            Console.WriteLine($"Halo {nama}, selamat datang di aplikasi CeHat");
-        }
-        
-        public void TambahGejala()
-        {
-        
-        }
-     }
 }

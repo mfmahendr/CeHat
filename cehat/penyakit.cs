@@ -1,53 +1,37 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace cehat
 {
-    public class Penyakit : Informasi // isinya akan ada di database
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("TblPenyakit")]
+    public partial class TblPenyakit : Informasi // sebagai class penyakit
     {
-        private Obat obat;
-        private Gejala gejala;
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblDetail> TblDetails { get; set; }  // sebagai kumpulan gejala
 
-        public Penyakit(string nama, Gejala gejala, Obat obat = null)
+        public virtual TblObat TblObat { get; set; }   // Atributnya sebagai obat
+
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblPenyakit()
         {
-            Nama = nama;
-            this.gejala = gejala;
-            this.obat = obat;
+            TblDetails = new HashSet<TblDetail>();
         }
 
-        public bool ShowInfoPenyakit()
-        {
-            bool isSuccess = false;
-            Console.WriteLine($"Penyakit yang mungkin anda derita: " + Nama);
-            Console.WriteLine("Gejala yang biasanya dialami: ");
-            foreach(string i in gejala.GejalaPenyakit)
-            {
-                Console.WriteLine(i);
-            }
-            if (obat != null) 
-            {
-                Console.WriteLine("Saran obat: " + obat.Nama);
-                if(obat.Dosis != null)
-                {
-                    Console.WriteLine("Dosis obat: " + obat.Dosis);
-                }
-                if(obat.EfekSamping != null)
-                {
-                    Console.WriteLine("Efek samping:" + obat.EfekSamping);
-                }
-            }
-            return isSuccess;
-        }
+        [Required]
+        [StringLength(50)]
 
-        public new bool Tambah(Penyakit penyakit)
+        public int IdObat { get; set; }
+
+        public void ShowInfo()
         {
             throw new NotImplementedException();
         }
 
-        public bool CekInfo(Penyakit penyakit)
+        public bool CekInfo(TblPenyakit penyakit)
         {
             throw new NotImplementedException();
         }

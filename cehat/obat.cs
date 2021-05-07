@@ -1,25 +1,31 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace cehat
 {
-    public class Obat : Informasi
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("TblObat")]
+    public partial class TblObat : Informasi // sebagai class Obat
     {
-        private string dosis;
-        private string efekSamping;
-        public string Dosis { get => dosis; set => dosis = value; }
-        public string EfekSamping { get => efekSamping; set => efekSamping = value; }
-    
-        public Obat(string nama, string dosis = null, string efekSamping = null)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TblObat()
         {
-            Nama = nama;
-            Dosis = dosis;
-            EfekSamping = efekSamping;
+            TblPenyakits = new HashSet<TblPenyakit>();
         }
 
-    }
+        [Required]
+        [StringLength(50)]
+        public new string Nama { get; set; }
 
+        [Column(TypeName = "text")]
+        public string Dosis { get; set; }
+
+        [Column(TypeName = "text")]
+        public string EfekSamping { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TblPenyakit> TblPenyakits { get; set; }
+    }
 }

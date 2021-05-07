@@ -7,10 +7,8 @@ namespace cehat
     using System.Data.Entity.Spatial;
 
     [Table("Admin")]
-    public partial class Admin
+    public partial class Admin : Person
     {
-        public int Id { get; set; }
-
         [Required]
         [StringLength(80)]
         public string username { get; set; }

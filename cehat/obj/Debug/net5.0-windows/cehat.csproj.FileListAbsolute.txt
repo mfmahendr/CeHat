@@ -22,3 +22,27 @@ D:\Kuliah\SEMESTER 2\Praktikum PBO\Cehat\cehat\obj\Debug\net5.0-windows\cehat.Fo
 D:\Kuliah\SEMESTER 2\Praktikum PBO\Cehat\cehat\obj\Debug\net5.0-windows\cehat.FormLoginUser.resources
 D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormMenuAdmin.resources
 D:\Kuliah\SEMESTER 2\Praktikum PBO\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormMenuUser.resources
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\net5.0-windows\cehat.exe
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\net5.0-windows\cehat.deps.json
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\net5.0-windows\cehat.runtimeconfig.json
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\net5.0-windows\cehat.runtimeconfig.dev.json
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\net5.0-windows\cehat.dll
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\net5.0-windows\ref\cehat.dll
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\net5.0-windows\cehat.pdb
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.csprojAssemblyReference.cache
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormLoading.resources
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormLogin.resources
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormLoginAdmin.resources
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormLoginUser.resources
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormMenuAdmin.resources
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.FormMenuUser.resources
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.Properties.Resources.resources
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.csproj.GenerateResource.cache
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.AssemblyInfo.cs
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.dll
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\ref\cehat.dll
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.pdb
+C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\net5.0-windows\cehat.genruntimeconfig.cache

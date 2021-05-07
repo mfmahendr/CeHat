@@ -17,19 +17,5 @@ namespace cehat.Entities
         [StringLength(50)]
         public string password { get; set; }
 
-        public Admin(string username, string password)
-        {
-            this.username = username;
-            this.password = password;
-        }
-
-        public bool IsCorrect(string inputUsername, string inputPass)
-        {
-            if (inputPass.Equals(password) && inputPass.Equals(username))
-                return true;
-            else
-                return false;
-        }
-
     }
-    }
+}

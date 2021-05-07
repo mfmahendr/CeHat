@@ -26,18 +26,23 @@ namespace cehat
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
                 using (var db = new DataModel())
                 {
-                    var query = from administrator in db.Admins
-                                where administrator.username == textBoxUsername.Text
-                                where administrator.password == textBoxPassword.Text
-                                select administrator;
+                    var query = from a in db.Admins
+                                where a.username == textBoxUsername.Text
+                                && a.password == textBoxPassword.Text
+                                select a;
 
                     foreach (var item in query)
                     {
-                        Admin admin = new Admin(item.username, item.password);
-                        if (admin.IsCorrect(textBoxUsername.Text, textBoxPassword.Text))
+                        Admin admin = new Admin();
+                        admin.username = item.username;
+                        admin.password = item.password;
+
+                        if (admin.username.Equals(textBoxUsername.Text) &&
+                        admin.password.Equals(textBoxPassword.Text))
                         {
                             MessageBox.Show("Login Berhasil!");
 
@@ -51,8 +56,8 @@ namespace cehat
                         }
                     }
                 }
-            
-
+            }
+            catch(Exception err) { MessageBox.Show(err.Message); }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

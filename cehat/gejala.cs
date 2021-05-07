@@ -44,7 +44,7 @@ namespace cehat
             return isExist;
         }
 
-        public void Tambah(Gejala gejala)
+        public void Tambah(TblGejala gejala)
         {
             throw new NotImplementedException();
         }

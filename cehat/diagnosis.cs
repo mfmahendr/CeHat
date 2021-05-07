@@ -29,9 +29,9 @@ namespace cehat
         List<string> daftarGejala3 = new List<string>();
         List<string> daftarGejala4 = new List<string>();
 
-        Penyakit penyakit1, penyakit2, penyakit3, penyakit4;
-        Gejala gejalaFlu, gejalaCovid, gejalaDiare, gejalaMaag;
-        Obat obatFlu, obatDiare, obatMaag;
+        TblPenyakit penyakit1, penyakit2, penyakit3, penyakit4;
+        TblGejala gejalaFlu, gejalaCovid, gejalaDiare, gejalaMaag;
+        TblObat obatFlu, obatDiare, obatMaag;
 
         public void GenerateInformasi()
         {
@@ -47,17 +47,17 @@ namespace cehat
             string efekParacetamol = "Demam, Muncul ruam kulit yang terasa gatal, Sakit tenggorokan, " +
                 "muncul sariawan, nyeri punggung, tubuh terasa lemah Kulit atau mata berwarna kekuningan " +
                 "timbul memar pada kulit, urine berwarna keruh atau berdarah, tinja berwarna hitam atau BAB berdarah";
-            gejalaFlu = new Gejala(daftarGejala1);
-            obatFlu = new Obat(paracetamol, dosisParacetamol, efekParacetamol);
-            penyakit1 = new Penyakit("Flu", gejalaFlu, obatFlu);
+            //gejalaFlu = new Gejala(daftarGejala1);
+            //obatFlu = new Obat(paracetamol, dosisParacetamol, efekParacetamol);
+            //penyakit1 = new Penyakit("Flu", gejalaFlu, obatFlu);
 
             //i inisialisasi penyakit Covid-19
             daftarGejala2.Add(gejala1);
             daftarGejala2.Add(gejala5);
             daftarGejala2.Add(gejala6);
             daftarGejala2.Add(gejala7);
-            gejalaCovid = new Gejala(daftarGejala2);
-            penyakit2 = new Penyakit("Covid-19", gejalaCovid);
+            //gejalaCovid = new Gejala(daftarGejala2);
+            //penyakit2 = new Penyakit("Covid-19", gejalaCovid);
 
             // inisialisasi penyakit diare
             daftarGejala3.Add(gejala8);
@@ -65,9 +65,9 @@ namespace cehat
             daftarGejala3.Add(gejala10);
             string dosisOralit = "Di atas 12 tahun: 12 gelas pada 3 jam pertama, kemudian 2 gelas tiap kali diare";
             string efekSampingOralit = "hipertensi, sakit kepala, pusing, letih, perubahan suasana hati, rasa tidak nyaman di perut, kembung";
-            gejalaDiare = new Gejala(daftarGejala3);
-            obatDiare = new Obat("Oralit",  dosisOralit, efekSampingOralit);
-            penyakit3 = new Penyakit("diare", gejalaDiare, obatDiare);
+            //gejalaDiare = new TblGejala(daftarGejala3);
+            //obatDiare = new TblObat("Oralit",  dosisOralit, efekSampingOralit);
+            //penyakit3 = new TblPenyakit("diare", gejalaDiare, obatDiare);
 
             // inisialisasi penyakit maag
             daftarGejala4.Add(gejala10);
@@ -78,9 +78,9 @@ namespace cehat
             string namaObatMaag = "Antasida";
             string dosisObatMaag = "Untuk Dewasa: 1-2 tablet, 3-4 kali per hari. Anak (6-12 tahun) : 0.5-1 tablet, 3-4 kali per har";
             string efekSampingObatMaag = "diare, perut kembung, mual dan muntah, kram perut, sembelit";
-            gejalaMaag = new Gejala(daftarGejala4);
-            obatMaag = new Obat(namaObatMaag, dosisObatMaag, efekSampingObatMaag);
-            penyakit4 = new Penyakit("Maag", gejalaMaag, obatMaag);
+            //gejalaMaag = new TblGejala(daftarGejala4);
+            //obatMaag = new TblObat(namaObatMaag, dosisObatMaag, efekSampingObatMaag);
+            //penyakit4 = new TblPenyakit("Maag", gejalaMaag, obatMaag);
 
             
 
@@ -91,9 +91,9 @@ namespace cehat
             return "Apakah anda mengalami " + gejala +" ?";
         }
 
-        public static Penyakit DiagnosisPenyakit() 
+        public static TblPenyakit DiagnosisPenyakit() 
         {
-            Penyakit hasil = null;
+            TblPenyakit hasil = null;
 
             //// diagnosis tanpa database-nya lebih kurang begini
             /// mungkin ini nanti dijadikan tempat diagnosis langsung
@@ -141,9 +141,9 @@ namespace cehat
             return hasil; // semua atribut hasil nantinya ditampilkan ke dalam suatu toolbox
         }
 
-        public static void showHasil(Penyakit hasil) /// ini lebih tepatnya buat console
+        public static void showHasil(TblPenyakit hasil) /// ini lebih tepatnya buat console
         {
-            hasil.ShowInfoPenyakit(); 
+            hasil.ShowInfo(); 
         }
 
         /// event untuk show hasil diagnosisnya di sini

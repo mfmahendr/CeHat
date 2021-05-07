@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "K0djceWvLzuvPfK9tDEbeKDkzoG1CmM0NGOijKn+5+YsJex3h1mxXhbbW0rdVQ/KbJmbLvMhbO5tVinKEvOLhA==",
+  "dgSpecHash": "71sOreJ/pHot1cx33JqpqYCLJ1CavAC0zyGcak3vcjkMecDrc5CWEScLf6blMASNXNcKWw+d3uLYAmjGLVHojQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\LENOVO\\Source\\Repos\\CeHat\\cehat\\cehat.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512"
+  ],
   "logs": []
 }

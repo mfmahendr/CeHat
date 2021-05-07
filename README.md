@@ -3,3 +3,7 @@ CeHat merupakan aplikasi cek kesehatan yang dapat diakses melalui desktop dengan
 
 ## Class Diagram
 ![image](https://user-images.githubusercontent.com/71614957/115813677-cde0ca00-a41d-11eb-93ed-aeb7adc5ff44.png)
+
+## Entity Diagram
+![image](https://user-images.githubusercontent.com/71614957/117397163-b6c5d000-af25-11eb-8e86-cdaee4182da7.png)
+

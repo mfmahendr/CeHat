@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LENOVO\\Source\\Repos\\CeHat\\cehat\\cehat.csproj": {}
+    "C:\\Users\\LENOVO\\source\\repos\\CeHat\\cehat\\cehat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LENOVO\\Source\\Repos\\CeHat\\cehat\\cehat.csproj": {
+    "C:\\Users\\LENOVO\\source\\repos\\CeHat\\cehat\\cehat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVO\\Source\\Repos\\CeHat\\cehat\\cehat.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\CeHat\\cehat\\cehat.csproj",
         "projectName": "cehat",
-        "projectPath": "C:\\Users\\LENOVO\\Source\\Repos\\CeHat\\cehat\\cehat.csproj",
+        "projectPath": "C:\\Users\\LENOVO\\source\\repos\\CeHat\\cehat\\cehat.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVO\\Source\\Repos\\CeHat\\cehat\\obj\\",
+        "outputPath": "C:\\Users\\LENOVO\\source\\repos\\CeHat\\cehat\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

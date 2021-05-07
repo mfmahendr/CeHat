@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CeHatDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdPenyakit" Type="int" Nullable="false" />
+    <Property Name="IdGejala" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblGejala">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gejala" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TblObat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dosis" Type="text" />
+    <Property Name="EfekSamping" Type="text" />
+  </EntityType>
+  <EntityType Name="TblPenyakit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdObat" Type="int" />
+  </EntityType>
+  <Association Name="FK_TblDetail_Gejala">
+    <End Role="TblGejala" Type="Self.TblGejala" Multiplicity="1" />
+    <End Role="TblDetail" Type="Self.TblDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblGejala">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TblDetail">
+        <PropertyRef Name="IdGejala" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblDetail_Penyakit">
+    <End Role="TblPenyakit" Type="Self.TblPenyakit" Multiplicity="1" />
+    <End Role="TblDetail" Type="Self.TblDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblPenyakit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TblDetail">
+        <PropertyRef Name="IdPenyakit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblPenyakit_TblObat">
+    <End Role="TblObat" Type="Self.TblObat" Multiplicity="0..1" />
+    <End Role="TblPenyakit" Type="Self.TblPenyakit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblObat">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TblPenyakit">
+        <PropertyRef Name="IdObat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CeHatDBModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblDetail" EntityType="Self.TblDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblGejala" EntityType="Self.TblGejala" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblObat" EntityType="Self.TblObat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblPenyakit" EntityType="Self.TblPenyakit" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TblDetail_Gejala" Association="Self.FK_TblDetail_Gejala">
+      <End Role="TblGejala" EntitySet="TblGejala" />
+      <End Role="TblDetail" EntitySet="TblDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblDetail_Penyakit" Association="Self.FK_TblDetail_Penyakit">
+      <End Role="TblPenyakit" EntitySet="TblPenyakit" />
+      <End Role="TblDetail" EntitySet="TblDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblPenyakit_TblObat" Association="Self.FK_TblPenyakit_TblObat">
+      <End Role="TblObat" EntitySet="TblObat" />
+      <End Role="TblPenyakit" EntitySet="TblPenyakit" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

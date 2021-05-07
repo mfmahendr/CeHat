@@ -10,7 +10,7 @@ namespace cehat
     {
         public static string Halo(string nama)
         {
-            string halo = $"Halo {nama}, selamat datang di aplikasi CeHat";
+            string halo = $"Halo {nama}, selamat datang di aplikasi CeHat!";
             return halo;
         }
     }

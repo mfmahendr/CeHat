@@ -24,8 +24,8 @@ namespace cehat
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            User user = new User(textBoxNama.Text);
-            MessageBox.Show($"Halo {textBoxNama.Text}, Selamat Datang di Aplikasi CeHat!");
+            string halo = User.Halo(textBoxNama.Text);
+            MessageBox.Show(halo);
             this.Hide();
 
             FormMenuUser menu = new FormMenuUser();

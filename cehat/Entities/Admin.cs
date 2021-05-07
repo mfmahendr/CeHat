@@ -7,10 +7,8 @@ namespace cehat.Entities
     using System.Data.Entity.Spatial;
 
     [Table("Admin")]
-    public partial class Admin
+    public partial class Admin : Person
     {
-        public int Id { get; set; }
-
         [Required]
         [StringLength(50)]
         public string username { get; set; }
@@ -18,5 +16,20 @@ namespace cehat.Entities
         [Required]
         [StringLength(50)]
         public string password { get; set; }
+
+        public Admin(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+
+        public bool IsCorrect(string inputUsername, string inputPass)
+        {
+            if (inputPass.Equals(password) && inputPass.Equals(username))
+                return true;
+            else
+                return false;
+        }
+
     }
-}
+    }

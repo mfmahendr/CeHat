@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using cehat.Entities;
+using System.Data.SqlClient;
 
 namespace cehat
 {
@@ -19,28 +21,38 @@ namespace cehat
 
         private void FormLoginAdmin_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin("admin","admin");
+            
+                using (var db = new DataModel())
+                {
+                    var query = from administrator in db.Admins
+                                where administrator.username == textBoxUsername.Text
+                                where administrator.password == textBoxPassword.Text
+                                select administrator;
 
-            if (admin.IsUserCorrect(textBoxUsername.Text) &&
-                admin.IsPassCorrect(textBoxPassword.Text))
-            {
-                MessageBox.Show("Login Berhasil!");
+                    foreach (var item in query)
+                    {
+                        Admin admin = new Admin(item.username, item.password);
+                        if (admin.IsCorrect(textBoxUsername.Text, textBoxPassword.Text))
+                        {
+                            MessageBox.Show("Login Berhasil!");
 
-                this.Hide();
-                FormMenuAdmin menus = new FormMenuAdmin();
-                menus.Show();
- 
-            }
+                            this.Hide();
+                            FormMenuAdmin menus = new FormMenuAdmin();
+                            menus.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login Gagal, Coba Lagi!");
+                        }
+                    }
+                }
+            
 
-            else
-            {
-                MessageBox.Show("Login Gagal, Coba Lagi!");
-            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -80,3 +92,4 @@ namespace cehat
         }
     }
 }
+

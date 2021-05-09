@@ -24,10 +24,12 @@ namespace cehat
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            string halo = User.Halo(textBoxNama.Text);
-            MessageBox.Show(halo);
+            if (textBoxNama.Text != "")
+            {
+                string halo = User.Halo(textBoxNama.Text);
+                MessageBox.Show(halo);
+            }
             this.Hide();
-
             FormMenuUser menu = new FormMenuUser();
             menu.Show();
         }

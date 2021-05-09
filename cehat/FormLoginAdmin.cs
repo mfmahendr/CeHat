@@ -36,9 +36,11 @@ namespace cehat
 
                     foreach (var item in query)
                     {
-                        Admin admin = new Admin();
-                        admin.username = item.username;
-                        admin.password = item.password;
+                        Admin admin = new Admin
+                        {
+                            username = item.username,
+                            password = item.password
+                        };
 
                         if (admin.username.Equals(textBoxUsername.Text) &&
                         admin.password.Equals(textBoxPassword.Text))

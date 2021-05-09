@@ -43,7 +43,7 @@ namespace cehat
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(-1, 472);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(801, 10);
+            this.panel1.Size = new System.Drawing.Size(901, 10);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -51,7 +51,7 @@ namespace cehat
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Location = new System.Drawing.Point(-1, 472);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 10);
+            this.panel2.Size = new System.Drawing.Size(11, 10);
             this.panel2.TabIndex = 2;
             // 
             // timer1
@@ -64,9 +64,9 @@ namespace cehat
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(575, 293);
+            this.pictureBox1.Location = new System.Drawing.Point(647, 293);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(138, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -74,18 +74,19 @@ namespace cehat
             // 
             // FormLoading
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 480);
+            this.ClientSize = new System.Drawing.Size(900, 480);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLoading";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loading";
             this.Load += new System.EventHandler(this.FormLoading_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -23,42 +23,64 @@ namespace cehat
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private async void pictureBox1_Click(object sender, EventArgs e)
         {
-            try
+            
+            if (textBoxUsername.Text == "" && textBoxPassword.Text == "")
             {
-                using (var db = new DataModel())
-                {
-                    var query = from a in db.Admins
-                                where a.username == textBoxUsername.Text
-                                && a.password == textBoxPassword.Text
-                                select a;
-
-                    foreach (var item in query)
-                    {
-                        Admin admin = new Admin
-                        {
-                            username = item.username,
-                            password = item.password
-                        };
-
-                        if (admin.username.Equals(textBoxUsername.Text) &&
-                        admin.password.Equals(textBoxPassword.Text))
-                        {
-                            MessageBox.Show("Login Berhasil!");
-
-                            this.Hide();
-                            FormMenuAdmin menus = new FormMenuAdmin();
-                            menus.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Login Gagal, Coba Lagi!");
-                        }
-                    }
-                }
+                MessageBox.Show("Username dan password belum diisi");
             }
-            catch(Exception err) { MessageBox.Show(err.Message); }
+            else if(textBoxUsername.Text == "") 
+            { 
+                MessageBox.Show("Username belum diisi"); 
+            }
+            else if(textBoxPassword.Text == "")
+            {
+                MessageBox.Show("Password belum diisi");
+            }
+            else
+            {
+                pictureBox2.Enabled = false;
+                try
+                {
+                    await Task.Run(() =>
+                    {
+                        using (var db = new CeHatDBContext())
+                        {
+                            var query = from a in db.Admins
+                                        where a.username == textBoxUsername.Text
+                                        && a.password == textBoxPassword.Text
+                                        select a;
+
+                            if (query.Count() != 0)
+                            {
+                                foreach (var item in query)
+                                {
+                                    Admin admin = new Admin
+                                    {
+                                        username = item.username,
+                                        password = item.password
+                                    };
+                                    if (admin.username.Equals(textBoxUsername.Text) &&
+                                    admin.password.Equals(textBoxPassword.Text))
+                                    {
+                                        MessageBox.Show("Login Berhasil!");
+
+                                        this.Hide();
+                                        FormMenuAdmin menus = new FormMenuAdmin();
+                                        menus.Show();
+                                    }
+                                }
+                            }
+                            else { MessageBox.Show("Login gagal, username atau password yang Anda isikan salah. Coba lagi!"); }
+                        }
+                    });
+
+                    pictureBox2.Enabled = true;
+
+                }
+                catch (Exception err) { MessageBox.Show(err.Message); }
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -98,4 +120,3 @@ namespace cehat
         }
     }
 }
-

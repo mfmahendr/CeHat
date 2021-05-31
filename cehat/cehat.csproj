@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C35141B7-9E51-4600-8707-A2E258E82835}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>cehat</RootNamespace>
+    <AssemblyName>cehat</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>cehat.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs" />
+    <Compile Include="AturanGejala.cs" />
+    <Compile Include="AturanObat.cs" />
+    <Compile Include="CeHatContext.cs" />
+    <Compile Include="FormAturanGejala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAturanGejala.Designer.cs">
+      <DependentUpon>FormAturanGejala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAturanObat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAturanObat.Designer.cs">
+      <DependentUpon>FormAturanObat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataAdmin.Designer.cs">
+      <DependentUpon>FormDataAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataGejala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataGejala.Designer.cs">
+      <DependentUpon>FormDataGejala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataObat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataObat.Designer.cs">
+      <DependentUpon>FormDataObat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataPenyakit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataPenyakit.Designer.cs">
+      <DependentUpon>FormDataPenyakit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiagnosis.Designer.cs">
+      <DependentUpon>FormDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHasilDiagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHasilDiagnosis.Designer.cs">
+      <DependentUpon>FormHasilDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoading.Designer.cs">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginAdmin.Designer.cs">
+      <DependentUpon>FormLoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginUser.Designer.cs">
+      <DependentUpon>FormLoginUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuAdmin.Designer.cs">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenuUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenuUser.Designer.cs">
+      <DependentUpon>FormMenuUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRating.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRating.Designer.cs">
+      <DependentUpon>FormRating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gejala.cs" />
+    <Compile Include="HasilDiagnosis.cs" />
+    <Compile Include="Akses.cs" />
+    <Compile Include="Informasi.cs" />
+    <Compile Include="Obat.cs" />
+    <Compile Include="Penyakit.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rating.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="ViewAturanGejala.cs" />
+    <Compile Include="ViewAturanObat.cs" />
+    <EmbeddedResource Include="FormAturanGejala.resx">
+      <DependentUpon>FormAturanGejala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAturanObat.resx">
+      <DependentUpon>FormAturanObat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataAdmin.resx">
+      <DependentUpon>FormDataAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataGejala.resx">
+      <DependentUpon>FormDataGejala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataObat.resx">
+      <DependentUpon>FormDataObat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataPenyakit.resx">
+      <DependentUpon>FormDataPenyakit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiagnosis.resx">
+      <DependentUpon>FormDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHasilDiagnosis.resx">
+      <DependentUpon>FormHasilDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoading.resx">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginAdmin.resx">
+      <DependentUpon>FormLoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginUser.resx">
+      <DependentUpon>FormLoginUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuAdmin.resx">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuUser.resx">
+      <DependentUpon>FormMenuUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRating.resx">
+      <DependentUpon>FormRating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBCehat.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DBCehat_log.ldf">
+      <DependentUpon>DBCehat.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

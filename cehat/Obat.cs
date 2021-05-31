@@ -10,19 +10,6 @@ namespace cehat
     [Table("Obat")]
     public partial class Obat : Informasi
     {
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        //public Obat()
-        //{
-        //    Penyakits = new HashSet<Penyakit>();
-        //}
-
-        //public string DosisObat { get; set; }
-
-        //public string EfekObat { get; set; }
-
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        //public virtual ICollection<Penyakit> Penyakits { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Obat()
         {

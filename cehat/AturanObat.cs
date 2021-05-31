@@ -14,19 +14,7 @@
         private bool status;
         private CeHatContext dbo = Akses.Tabel();
 
-        //[Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        //[Column("IdPenyakit")]
-        //public int IdPenyakit { get; set; }
-
-
-        //[Column("IdObat")]
-        //public int? IdObat { get; set; }
-
-        //// Navigation properties
-        //public virtual Penyakit Penyakit { get; set; }
-        //public virtual Obat Obat { get; set; }
-
+        // Kolom pada tabel AturanObat
         [Key]
         [Column("Id")]
         public int Id { get; set; }
@@ -62,16 +50,6 @@
             else { return null; }
         }
 
-        public int GetIdPenyakit(string namaPenyakit)
-        {
-            return dbo.Penyakits.Where(x => x.Nama == namaPenyakit).Select(x => x.Id).SingleOrDefault();
-        }
-
-        public int GetIdObat(string namaObat)
-        {
-            return dbo.Obats.Where(x => x.Nama == namaObat).Select(x => x.Id).SingleOrDefault();
-        }
-
         public bool Tambah(string namaPenyakit, string namaObat = "")
         {
             status = false;
@@ -83,31 +61,9 @@
                 idObat = dbo.Obats.Where(x => x.Nama == namaObat).Select(x => x.Id).Single();
             }
 
-            if (idPenyakit != 0 && idObat != null)
+            if (idPenyakit != 0)
             {
-                if (!dbo.AturanObats.Any(x => x.IdPenyakit == idPenyakit && x.IdObat == idObat))
-                {
-                    dbo.AturanObats.Add(new AturanObat()
-                    {
-                        IdPenyakit = idPenyakit,
-                        IdObat = idObat
-                    });
-
-                    status = true;
-                }
-            }
-            else if (idPenyakit != 0)
-            {
-                if (!dbo.AturanObats.Any(x => x.IdPenyakit == idPenyakit))
-                {
-                    dbo.AturanObats.Add(new AturanObat()
-                    { 
-                        IdPenyakit = idPenyakit, 
-                        IdObat = null 
-                    });
-
-                    status = true;
-                }
+                status = Tambah(idPenyakit, idObat);
             }
 
             dbo.SaveChanges();
@@ -127,8 +83,6 @@
                 dbo.SaveChanges();
                 status = true;
             }
-
-            System.Windows.Forms.MessageBox.Show(dbo.AturanObats.Where(x => x.IdPenyakit == idPenyakit && x.IdObat == idObat).Select(y => y.IdPenyakit).ToString());
 
             return status;
         }

@@ -13,19 +13,31 @@ namespace cehat
 {
     public partial class FormAturanGejala : Form
     {
-        //AturanGejala aturan = new AturanGejala();
+        //Aturan aturan = new Aturan();
+        #region Atribut
+        private AturanGejala aturan = new AturanGejala();
+        private int idPenyakit;
+        private int idGejala;
+
+        // agar form draggable walaupun borderless
+        private bool mousedown;
+        private Point offset;
+        #endregion
+
+        #region Konstruktor
         public FormAturanGejala()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Method
         private void DisplayData()
         {
             try
             {
-                //dataGridView1.DataSource = Aturan.GetAturanGejala();
+                dataGridView1.DataSource = aturan.GetAturanGejala();
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -43,10 +55,13 @@ namespace cehat
             comboBoxPenyakit.SelectedItem = null;
             comboBoxGejala.SelectedItem = null;
 
-            buttonTambah.Enabled = true;
+            idPenyakit = 0;
+            idGejala = 0;
 
+            buttonTambah.Enabled = true;
             buttonHapus.Enabled = false;
         }
+        #endregion
 
         private void FormAturanGejala_Load(object sender, EventArgs e)
         {
@@ -57,90 +72,10 @@ namespace cehat
             ResetTb();
             DisplayData();
 
-            lblCari.BackColor = System.Drawing.Color.Transparent;
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 100;
         }
 
-        private void buttonTambah_Click(object sender, EventArgs e)
-        {
-            if (comboBoxPenyakit.Text.ToString() != "" && comboBoxGejala.Text.ToString() != "")
-            {
-                //using (SqlConnection con = new SqlConnection(path))
-                //{
-                //    aturan.IdPenyakit = int.Parse(comboBoxPenyakit.Text);
-                //    aturan.IdGejala = int.Parse(comboBoxGejala.Text.ToString());
-
-                //    con.Open();
-
-                //    SqlCommand cmd = con.CreateCommand();
-                //    cmd.CommandType = CommandType.Text;
-                //    cmd.CommandText = "insert into AturanGejala values('" + aturan.IdPenyakit + "', '" + aturan.IdPenyakit + "')";
-                //    cmd.ExecuteNonQuery();
-
-                //    con.Close();
-                //}
-
-                ResetTb();
-                DisplayData();
-                MessageBox.Show("Aturan baru berhasil ditambahkan!");
-            }
-            else
-            {
-                MessageBox.Show("Data aturan tidak boleh kosong!");
-            }
-        }
-
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            ResetTb();
-            DisplayData();
-        }
-
-        private void cbCariPenyakit_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //using (SqlConnection con = new SqlConnection(path))
-            //{
-            //    con.Open();
-
-            //    SqlCommand cmd = con.CreateCommand();
-            //    cmd.CommandType = CommandType.Text;
-            //    cmd.CommandText = "select DetailGejala from AturanGejala where NamaPenyakit = '" + cbCariPenyakit.Text.ToString() + "'";
-            //    cmd.ExecuteNonQuery();
-
-            //    DataTable dt = new DataTable();
-            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //    da.Fill(dt);
-
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        comboBoxGejala.Items.Add(dr["DetailGejala"].ToString()); //////////////////////////////////////////////////
-            //    }
-
-            //    con.Close();
-            //}
-        }
-
-        private void buttonHapus_Click(object sender, EventArgs e)
-        {
-            //using (SqlConnection con = new SqlConnection(path))
-            //{
-            //    con.Open();
-
-            //    SqlCommand cmd = con.CreateCommand();
-            //    cmd.CommandType = CommandType.Text;
-            //    cmd.CommandText = "delete from AturanGejala where NamaPenyakit = '" + aturan.IdPenyakit + "' and DetailGejala = '" + aturan.IdGejala + "'";
-            //    cmd.ExecuteNonQuery();
-
-            //    displayData();
-            //    resetTb();
-            //    MessageBox.Show("Data berhasil dihapus!");
-
-            //    con.Close();
-            //}
-        }
-
-        // agar form draggable walaupun borderless
-        bool mousedown;
-        private Point offset;
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -174,9 +109,95 @@ namespace cehat
             this.Close();
         }
 
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            //try {
+            if (comboBoxPenyakit.SelectedItem != null && comboBoxGejala.SelectedItem != null)
+            {
+                if (aturan.Tambah(idPenyakit, idGejala))
+                {
+                    MessageBox.Show("Data berhasil ditambahkan!");
+                }
+                else
+                {
+                    MessageBox.Show("Data gagal ditambahkan, kemungkinan karena data yang ditambahkan sudah ada");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Data aturan tidak boleh kosong! Silakan pilih data yang akan ditambahkan");
+            }
+            //}
+            //catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.StackTrace + "\n" + ex.Message + "\n" + ex.HelpLink); }
+            ResetTb();
+            DisplayData();
+        }
+        
+        private void buttonHapus_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (aturan.Hapus(idPenyakit, idGejala))
+                {
+                    MessageBox.Show("Data berhasil dihapus!");
+                }
+                else { MessageBox.Show("Data gagal dihapus!"); }
+            }
+            catch (ArgumentNullException) { MessageBox.Show("Data gagal dihapus, kemungkinan karena terdapat dua atau lebih record"); }
+            catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.Message + "\n" + ex.StackTrace); }
+
+            DisplayData();
+            ResetTb();
+        }
+   
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            ResetTb();
+            DisplayData();
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int baris = e.RowIndex;
+            if (baris >= 0)
+            {
+                buttonTambah.Enabled = false;
+                buttonHapus.Enabled = true;
+
+                idPenyakit = (int)dataGridView1.Rows[baris].Cells[0].Value;
+                idGejala = (int)dataGridView1.Rows[baris].Cells[1].Value;
+
+                comboBoxPenyakit.Text = Penyakit.GetNamaBerdasarkan(idPenyakit);
+                comboBoxGejala.Text = Gejala.GetDetailGejala(idGejala);
+            }
+            else
+            {
+                comboBoxGejala.Text = "";
+                comboBoxPenyakit.Text = "";
+            }
+        }
+
         private void tbCari_TextChanged(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = aturan.GetAturanGejala(tbCari.Text);
+        }
 
+        private void comboBoxPenyakit_Click(object sender, EventArgs e)
+        {
+            buttonTambah.Enabled = true;
+            buttonHapus.Enabled = false;
+        }
+
+        private void comboBoxPenyakit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxPenyakit.SelectedItem != null)
+                idPenyakit = Penyakit.GetIdBerdasarkan(comboBoxPenyakit.SelectedItem.ToString());
+        }
+
+        private void comboBoxGejala_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxGejala.SelectedItem != null)
+                idGejala = Gejala.GetIdBerdasarkan(comboBoxGejala.SelectedItem.ToString());
         }
     }
 }

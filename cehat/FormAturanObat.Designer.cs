@@ -59,7 +59,7 @@ namespace cehat
             this.comboBoxObat.Size = new System.Drawing.Size(293, 33);
             this.comboBoxObat.TabIndex = 33;
             this.comboBoxObat.SelectedIndexChanged += new System.EventHandler(this.comboBoxObat_SelectedIndexChanged);
-            this.comboBoxObat.Click += new System.EventHandler(this.comboBoxPenyakit_Click);
+            this.comboBoxObat.Click += new System.EventHandler(this.comboBox_Click);
             // 
             // buttonRefresh
             // 
@@ -211,7 +211,7 @@ namespace cehat
             this.comboBoxPenyakit.Size = new System.Drawing.Size(293, 33);
             this.comboBoxPenyakit.TabIndex = 32;
             this.comboBoxPenyakit.SelectedIndexChanged += new System.EventHandler(this.comboBoxPenyakit_SelectedIndexChanged);
-            this.comboBoxPenyakit.Click += new System.EventHandler(this.comboBoxPenyakit_Click);
+            this.comboBoxPenyakit.Click += new System.EventHandler(this.comboBox_Click);
             // 
             // FormAturanObat
             // 

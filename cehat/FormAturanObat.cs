@@ -14,7 +14,6 @@ namespace cehat
 {
     public partial class FormAturanObat : Form
     {
-        //Aturan aturan = new Aturan();
         #region Atribut
         private AturanObat aturan = new AturanObat();
 
@@ -26,12 +25,6 @@ namespace cehat
         #endregion
 
         #region Method
-        private void IsiComboBox()
-        {
-            comboBoxPenyakit.DataSource = Penyakit.GetListNamaPenyakit().ToList();
-            comboBoxObat.DataSource = Obat.GetListNamaObat().ToList();
-        }
-
         private void DisplayData()
         {
             try
@@ -42,6 +35,12 @@ namespace cehat
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void IsiComboBox()
+        {
+            comboBoxPenyakit.DataSource = Penyakit.GetListNamaPenyakit().ToList();
+            comboBoxObat.DataSource = Obat.GetListNamaObat().ToList();
         }
 
         private void ResetTb()
@@ -66,19 +65,6 @@ namespace cehat
         #endregion
 
         #region Event
-        private void FormAturanObat_Load(object sender, EventArgs e)
-        {
-            comboBoxPenyakit.Items.Clear();
-            comboBoxObat.Items.Clear();
-
-            IsiComboBox();
-            ResetTb();
-            DisplayData();
-
-            dataGridView1.Columns[0].Width = 100;
-            dataGridView1.Columns[1].Width = 100;
-        }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -112,6 +98,18 @@ namespace cehat
             this.Close();
         }
 
+        private void FormAturanObat_Load(object sender, EventArgs e)
+        {
+            comboBoxPenyakit.Items.Clear();
+            comboBoxObat.Items.Clear();
+
+            IsiComboBox();
+            ResetTb();
+            DisplayData();
+
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 100;
+        }
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
@@ -205,7 +203,7 @@ namespace cehat
             dataGridView1.DataSource = aturan.GetAturanObat(tbCari.Text);
         }
 
-        private void comboBoxPenyakit_Click(object sender, EventArgs e)
+        private void comboBox_Click(object sender, EventArgs e)
         {
             buttonTambah.Enabled = true;
             buttonHapus.Enabled = false;
@@ -223,5 +221,6 @@ namespace cehat
                 idObat = Obat.GetIdBerdasarkan(comboBoxObat.SelectedItem.ToString());
         }
         #endregion
+
     }
 }

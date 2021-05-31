@@ -7,23 +7,28 @@
     using System.Data.Entity.Spatial;
     using System.Linq;
 
+    [Table("AturanGejala")]
     public partial class AturanGejala
     {
         #region Field
+        private CeHatContext dbo = Akses.Tabel();
+        private bool status;
+
         // Kolom
         [Key]
-        public int Id { get; set; }
+        [Column("Id")]
+        //public int Id { get; set; }
 
+        [Column("IdPenyakit")]
         public int IdPenyakit { get; set; }
 
+        [Column("IdGejala")]
         public int IdGejala { get; set; }
 
         // Navigation properties
         public virtual Gejala Gejala { get; set; }
-
         public virtual Penyakit Penyakit { get; set; }
 
-        private CeHatContext dbo = Akses.Tabel();
 
         #endregion
 
@@ -37,14 +42,44 @@
             return dbo.ViewAturanGejalas.Where(x => x.DetailGejala.Contains(kondisi)).ToList();
         }
 
-        public string GetNamaPenyakit(int id)
+        public bool Tambah(string namaPenyakit, string detailGejala)
         {
-            return dbo.Penyakits.Where(x => x.Id == id).Select(x => x.Nama).SingleOrDefault().ToString();
+            status = false;
+            int idPenyakit = dbo.Penyakits.Where(x => x.Nama == namaPenyakit).Select(x => x.Id).Single();
+            int idGejala = dbo.Gejalas.Where(x => x.DetailGejala == detailGejala).Select(x => x.Id).Single();
+            
+            if (idPenyakit != 0 && idGejala != 0)
+            {
+                status = Tambah(idPenyakit, idGejala);
+            }
+
+            dbo.SaveChanges();
+            return status;
         }
 
-        public List<string> GetGejala(int id)
+        public bool Tambah(int idPenyakit, int idGejala)
         {
-            return dbo.Gejalas.Where(x => x.Id == id).Select(x => x.DetailGejala).ToList();
+            status = false;
+            if (!dbo.AturanGejalas.Any(x => x.IdPenyakit == idPenyakit && x.IdGejala == idGejala))
+            {
+                dbo.AturanGejalas.Add(new AturanGejala()
+                {
+                    IdPenyakit = idPenyakit,
+                    IdGejala = idGejala
+                });
+                dbo.SaveChanges();
+                status = true;
+            }
+            return status;
+        }
+
+        public bool Hapus(int idPenyakit, int idGejala)
+        {
+            dbo.AturanGejalas.Remove(dbo.AturanGejalas
+                .Where(x => x.IdPenyakit == idPenyakit && x.IdGejala == idGejala).Single());
+
+            dbo.SaveChanges();
+            return true;
         }
 
     }

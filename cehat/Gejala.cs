@@ -12,7 +12,7 @@ namespace cehat
     public partial class Gejala
     {
         private bool status;
-        CeHatContext dbo = Akses.Tabel();
+        private static CeHatContext dbo = Akses.Tabel();
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Gejala()
@@ -42,9 +42,14 @@ namespace cehat
             return dbo.Gejalas.Select(x => x.DetailGejala).ToList();
         }
 
-        public List<string> GetListDetailGejala(int id)
+        public static string GetDetailGejala(int id)
         {
-            return dbo.Gejalas.Where(x => x.Id == id).Select(x => x.DetailGejala).ToList();
+            return dbo.Gejalas.Where(x => x.Id == id).Select(x => x.DetailGejala).Single();
+        }
+
+        public static int GetIdBerdasarkan(string namaObat)
+        {
+            return dbo.Gejalas.Where(x => x.DetailGejala == namaObat).Select(x => x.Id).Single();
         }
 
         public bool Tambah(string gejala)

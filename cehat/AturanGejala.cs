@@ -17,7 +17,7 @@
         // Kolom
         [Key]
         [Column("Id")]
-        //public int Id { get; set; }
+        public int Id { get; set; }
 
         [Column("IdPenyakit")]
         public int IdPenyakit { get; set; }

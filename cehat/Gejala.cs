@@ -37,7 +37,7 @@ namespace cehat
             return dbo.Gejalas.Where(x => x.DetailGejala == gejala).ToList();
         }
 
-        public List<string> GetListDetailGejala()
+        public static List<string> GetListDetailGejala()
         {
             return dbo.Gejalas.Select(x => x.DetailGejala).ToList();
         }

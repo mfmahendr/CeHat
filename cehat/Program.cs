@@ -16,7 +16,7 @@ namespace cehat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAturanGejala());
+            Application.Run(new FormLoading());
         }
     }
 }

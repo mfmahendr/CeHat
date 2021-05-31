@@ -46,8 +46,8 @@ namespace cehat
 
         private void IsiComboBox()
         {
-            comboBoxPenyakit.DataSource = Akses.Tabel().Penyakits.Select(x => x.Nama).ToList();
-            comboBoxGejala.DataSource = Akses.Tabel().Gejalas.Select(x => x.DetailGejala).ToList();
+            comboBoxPenyakit.DataSource = Penyakit.GetListNamaPenyakit();
+            comboBoxGejala.DataSource = Gejala.GetListDetailGejala();
         }
 
         private void ResetTb()

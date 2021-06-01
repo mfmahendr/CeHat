@@ -29,3 +29,4 @@ C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.csproj.CoreCompileInput
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.csproj.CopyComplete
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.exe
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.pdb
+C:\Users\LENOVO\source\repos\CeHat\cehat\obj\Debug\cehat.FormDiagnosis2.resources

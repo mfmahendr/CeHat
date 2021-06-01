@@ -10,7 +10,7 @@ namespace cehat
     [Table("HasilDiagnosis")]
     public partial class HasilDiagnosis
     {
-        CeHatContext dbo = Akses.Tabel();
+        private CeHatContext dbo = Akses.Tabel();
 
         public int Id { get; set; }
 
@@ -23,16 +23,56 @@ namespace cehat
 
         public void Tambah(string namaPenyakit)
         {
-            
+            dbo.HasilDiagnosis.Add(new HasilDiagnosis() { NamaPenyakit = namaPenyakit, Frekuensi = 0 });
+        }
+
+        public void UbahNamaPenyakit(string namaLama , string namaBaru)
+        {
+            var hasilDiagnosis = dbo.HasilDiagnosis.Where(x => x.NamaPenyakit == namaLama).Single();
+            hasilDiagnosis.NamaPenyakit = namaBaru;
+            dbo.SaveChanges();
+        }
+
+        public void UbahNamaPenyakit(int kondisiId, string namaBaru)
+        {
+            var hasilDiagnosis = dbo.HasilDiagnosis.Where(x => x.Id == kondisiId).Single();
+            hasilDiagnosis.NamaPenyakit = namaBaru;
+            dbo.SaveChanges();
         }
 
         public void UbahFrekuensi(int id, int frekuensi)
         {
-            var hasil = dbo.HasilDiagnosis.Where(x => x.Id == id).ToList();
-            foreach(var x in hasil)
-            {
-                x.Frekuensi = frekuensi + 1;
-            }
+            var hasil = dbo.HasilDiagnosis.Where(x => x.Id == id).Single();
+
+            hasil.Frekuensi = frekuensi + 1;
+
+            dbo.SaveChanges();
+        }
+
+        public void UbahFrekuensi(string namaPenyakit, int frekuensi)
+        {
+            var hasil = dbo.HasilDiagnosis.Where(x => x.NamaPenyakit == namaPenyakit).Single();
+            
+            hasil.Frekuensi = frekuensi + 1;
+            
+            dbo.SaveChanges();
+        }
+
+        public void HapusPenyakit(int id)
+        {
+            dbo.HasilDiagnosis.Remove(dbo.HasilDiagnosis.Where(x => x.Id == id).Single());
+            dbo.SaveChanges();
+        }
+
+        public void HapusPenyakit(string namaPenyakit)
+        {
+            dbo.HasilDiagnosis.Remove(dbo.HasilDiagnosis.Where(x => x.NamaPenyakit == namaPenyakit).Single());
+            dbo.SaveChanges();
+        }
+
+        public void HapusPenyakit(int id, string namaPenyakit)
+        {
+            dbo.HasilDiagnosis.Remove(dbo.HasilDiagnosis.Where(x => x.Id == id && x.NamaPenyakit == namaPenyakit).Single());
             dbo.SaveChanges();
         }
     }

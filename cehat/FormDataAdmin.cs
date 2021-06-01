@@ -183,6 +183,12 @@ namespace cehat
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            buttonTambah.Enabled = true;
+            buttonHapus.Enabled = false;
+            buttonUbah.Enabled = false;
+
             if (e.RowIndex >= 0 && e.ColumnIndex == 0)
             {
                 buttonTambah.Enabled = false;
@@ -192,14 +198,6 @@ namespace cehat
                 id = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
                 textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            }
-            else
-            {
-                textBox1.Text = "";
-                textBox2.Text = "";
-                buttonTambah.Enabled = true;
-                buttonHapus.Enabled = false;
-                buttonUbah.Enabled = false;
             }
         }
 

@@ -76,33 +76,27 @@ namespace cehat
 
         public bool Tambah(string username, string password)
         {
+            status = false;
+
             if (!dbo.Admins.Any(x => x.Username == username))
             {
-                adminBaru = new Admin()
+                dbo.Admins.Add(new Admin()
                 {
                     Username = username,
                     Password = password
-                };
-
-                dbo.Admins.Add(adminBaru);
+                });
                 dbo.SaveChanges();
                 status = true;
 
             }
-            else
-            {
-                status = false;
-            }
 
-            var cek = dbo.Admins.Where(x => x.Username == username && x.Password == password).ToList();
-            if (cek.Count == 0) { MessageBox.Show("Tidak tersimpan"); }
-            else if(cek.Count == 1){ MessageBox.Show("Yessssssssssssssssssssss"); }
-            else if(cek.Count > 1) { MessageBox.Show("Aneh"); }
             return status;
         }
 
         public bool Ubah(int kondisi, string username = "", string password = "")
         {
+            status = false;
+
             if (username != "" && password != "")
             {
                 if (!dbo.Admins.Any(x => x.Username == username) && !dbo.Admins.Any(x => x.Password == password))
@@ -115,7 +109,6 @@ namespace cehat
                     }
                     status = true;
                 }
-                else { status = false; }
             }
             else if (username != "")
             {
@@ -128,20 +121,17 @@ namespace cehat
                     }
                     status = true;
                 }
-                else { status = false; }
             }
             else if (password != "")
             {
                 if (!dbo.Admins.Any(x => x.Password == password))
                 {
-                    var admin = dbo.Admins.Where(x => x.Id == kondisi);
-                    foreach (var x in admin)
-                    {
-                        x.Password = password;
-                    }
+                    var admin = dbo.Admins.Where(x => x.Id == kondisi).Single();
+               
+                    admin.Password = password;
+                    
                     status = true;
                 }
-                else { status = false; }
             }
 
             dbo.SaveChanges();

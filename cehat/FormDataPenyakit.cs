@@ -27,7 +27,7 @@ namespace cehat
             InitializeComponent();
         }
 
-        private void displayData()
+        private void DisplayData()
         {
             try
             {
@@ -40,7 +40,7 @@ namespace cehat
             }
         }
 
-        private void resetTb()
+        private void ResetTb()
         {
             textBoxNamaPenyakit.Text = "";
             textBoxDeskripsi.Text = "";
@@ -53,8 +53,8 @@ namespace cehat
 
         private void FormDataPenyakit_Load(object sender, EventArgs e)
         {
-            displayData();
-            resetTb();
+            DisplayData();
+            ResetTb();
 
             lblCari.BackColor = System.Drawing.Color.Transparent;
             dataGridView1.Columns[0].Width = 30;
@@ -72,8 +72,8 @@ namespace cehat
                     }
                     else { MessageBox.Show("Penyakit baru gagal ditambahkan, kemungkinan karena penyakit yang ditambahkan sudah ada"); }
 
-                    resetTb();
-                    displayData();
+                    ResetTb();
+                    DisplayData();
                 }
                 else
                 {
@@ -86,8 +86,8 @@ namespace cehat
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            displayData();
-            resetTb();
+            DisplayData();
+            ResetTb();
         }
 
         private void buttonUbah_Click(object sender, EventArgs e)
@@ -104,7 +104,7 @@ namespace cehat
                 }
                 else if (textBoxNamaPenyakit.Text != "")
                 {
-                    if (penyakit.Ubah(id, penyakit: textBoxNamaPenyakit.Text))
+                    if (penyakit.Ubah(id, namaBaru: textBoxNamaPenyakit.Text))
                     {
                         MessageBox.Show("Data berhasil diubah!");
                     }
@@ -126,8 +126,8 @@ namespace cehat
             catch (DbEntityValidationException) { MessageBox.Show("Data informasinya tidak boleh kosong dan tidak boleh didahului spasi"); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            displayData();
-            resetTb();
+            DisplayData();
+            ResetTb();
         }
 
         private void buttonHapus_Click(object sender, EventArgs e)
@@ -136,8 +136,8 @@ namespace cehat
             {
                 if (penyakit.Hapus(id: id))
                 {
-                    displayData();
-                    resetTb();
+                    DisplayData();
+                    ResetTb();
                     MessageBox.Show("Data berhasil dihapus!");
                 }
                 else { MessageBox.Show("Data gagal dihapus!"); }
@@ -181,9 +181,14 @@ namespace cehat
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            textBoxNamaPenyakit.Text = "";
+            textBoxDeskripsi.Text = "";
+            buttonTambah.Enabled = true;
+            buttonHapus.Enabled = false;
+            buttonUbah.Enabled = false;
+
             int baris = e.RowIndex;
-            int kolom = e.ColumnIndex;
-            if (baris >= 0 && kolom == 0)
+            if (baris >= 0)
             {
                 buttonTambah.Enabled = false;
                 buttonHapus.Enabled = true;
@@ -192,14 +197,6 @@ namespace cehat
                 id = (int)dataGridView1.Rows[baris].Cells[0].Value;
                 textBoxNamaPenyakit.Text = dataGridView1.Rows[baris].Cells[1].Value.ToString();
                 textBoxDeskripsi.Text = dataGridView1.Rows[baris].Cells[2].Value.ToString();
-            }
-            else
-            {
-                textBoxNamaPenyakit.Text = "";
-                textBoxDeskripsi.Text = "";
-                buttonTambah.Enabled = true;
-                buttonHapus.Enabled = false;
-                buttonUbah.Enabled = false;
             }
         }
 

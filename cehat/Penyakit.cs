@@ -10,6 +10,7 @@ namespace cehat
     [Table("Penyakit")]
     public partial class Penyakit : Informasi
     {
+        private HasilDiagnosis hasilDiagnosis = new HasilDiagnosis();
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Penyakit()
@@ -27,12 +28,12 @@ namespace cehat
         public virtual ICollection<AturanObat> AturanObats { get; set; }
 
 
-        public static List<Penyakit> GetListSemuaDataBerdasarkan(int id)
+        public static Penyakit GetDataBerdasarkan(int id)
         {
-            return dbo.Penyakits.Where(x => x.Id == id).ToList();
+            return dbo.Penyakits.Where(x => x.Id == id).Single();
         }
 
-        public static List<Penyakit> GetListSemuaDataBerdasarkan(string namaPenyakit)
+        public static List<Penyakit> GetDataBerdasarkan(string namaPenyakit)
         {
             return dbo.Penyakits.Where(x => x.Nama == namaPenyakit).ToList();
         }
@@ -58,6 +59,9 @@ namespace cehat
             if (!dbo.Penyakits.Any(x => x.Nama == namaPenyakit))
             {
                 dbo.Penyakits.Add(new Penyakit() { Nama = namaPenyakit, DetailPenyakit = detail });
+
+                hasilDiagnosis.Tambah(namaPenyakit);
+                
                 dbo.SaveChanges();
                 status = true;
             }
@@ -69,108 +73,106 @@ namespace cehat
             return status;
         }
 
-        public bool Ubah(string kondisiNama, string penyakit, string detailBaru)
+        public bool Ubah(string kondisiNama, string namaBaru, string detailBaru)
         {
-            if (!dbo.Penyakits.Any(x => x.Nama == penyakit))
+            status = false;
+
+            if (!dbo.Penyakits.Any(x => x.Nama == namaBaru))
             {
-                var penyakits = dbo.Penyakits.Where(x => x.Nama == kondisiNama);
+                var penyakits = GetDataBerdasarkan(kondisiNama);
 
                 foreach (var x in penyakits)
                 {
-                    x.Nama = penyakit;
+                    x.Nama = namaBaru;
                     x.DetailPenyakit = detailBaru;
                 }
+
+                hasilDiagnosis.UbahNamaPenyakit(kondisiNama, namaBaru);
+
                 dbo.SaveChanges();
                 status = true;
             }
-            else { status = false; }
 
             return status;
         }
 
-        public bool Ubah(int kondisiId, string penyakit = "", string detailBaru = "")
+        public bool Ubah(int kondisiId, string namaBaru = "", string detailBaru = "")
         {
-            if (penyakit != "" && detailBaru != "")
-            {
-                if (!dbo.Penyakits.Any(x => x.Nama == penyakit) && !dbo.Penyakits.Any(x => x.DetailPenyakit == detailBaru))
-                {
-                    var penyakits = dbo.Penyakits.Where(x => x.Id == kondisiId);
+            status = false;
 
-                    foreach (var x in penyakits)
-                    {
-                        x.Nama = penyakit;
-                        x.DetailPenyakit = detailBaru;
-                    }
-                    dbo.SaveChanges();
+            if (namaBaru != "" && detailBaru != "")
+            {
+                if (!dbo.Penyakits.Any(x => x.Nama == namaBaru) && !dbo.Penyakits.Any(x => x.DetailPenyakit == detailBaru))
+                {
+                    var penyakits = GetDataBerdasarkan(kondisiId);
+
+                    penyakits.Nama = namaBaru;
+                    penyakits.DetailPenyakit = detailBaru;
+
+                    hasilDiagnosis.UbahNamaPenyakit(kondisiId, namaBaru);
+
                     status = true;
                 }
-                else { status = false; }
             }
-            else if (penyakit != "")
+            else if (namaBaru != "")
             {
-                if (!dbo.Penyakits.Any(x => x.Nama == penyakit))
+                if (!dbo.Penyakits.Any(x => x.Nama == namaBaru))
                 {
-                    var penyakits = dbo.Penyakits.Where(x => x.Id == kondisiId);
+                    var penyakit = GetDataBerdasarkan(kondisiId);
+                    penyakit.Nama = namaBaru;
 
-                    foreach (var x in penyakits)
-                    {
-                        x.Nama = penyakit;
-                    }
-                    dbo.SaveChanges();
+                    hasilDiagnosis.UbahNamaPenyakit(kondisiId, namaBaru);
+
                     status = true;
                 }
-                else { status = false; }
             }
             else if(detailBaru != "")
             {
                 if (!dbo.Penyakits.Any(x => x.DetailPenyakit == detailBaru))
                 {
-                    var penyakits = dbo.Penyakits.Where(x => x.Id == kondisiId);
+                    var penyakit = GetDataBerdasarkan(kondisiId);
+                    penyakit.DetailPenyakit = detailBaru;
 
-                    foreach (var x in penyakits)
-                    {
-                        x.DetailPenyakit = detailBaru;
-                    }
-                    dbo.SaveChanges();
+                    hasilDiagnosis.UbahNamaPenyakit(kondisiId, namaBaru);
+
                     status = true;
                 }
-                else { status = false; }
             }
-
+            dbo.SaveChanges();
             return status;
         }
 
-        public bool Hapus(int id = 0, string namaPenyakit = "", string detailPenyakit = "")
+        public bool Hapus(int id = 0, string namaPenyakit = "")
         {
-            if (id != 0 && namaPenyakit != "" && detailPenyakit != "")
+            status = false;
+
+            if (id != 0 && namaPenyakit != "")
             {
                 dbo.Penyakits.RemoveRange(dbo.Penyakits
-                .Where(x => x.Id == id && x.Nama == namaPenyakit && x.DetailPenyakit == detailPenyakit));
-                status = true;
-            }
-            else if (namaPenyakit != "" && detailPenyakit != "")
-            {
-                dbo.Penyakits.RemoveRange(dbo.Penyakits
-                .Where(x => x.Nama == namaPenyakit && x.DetailPenyakit == detailPenyakit));
+                .Where(x => x.Id == id && x.Nama == namaPenyakit));
+
+                hasilDiagnosis.HapusPenyakit(id, namaPenyakit);
 
                 status = true;
             }
             else if (id != 0)
             {
-                dbo.Penyakits.RemoveRange(dbo.Penyakits.Where(x => x.Id == id));                
+                dbo.Penyakits.RemoveRange(dbo.Penyakits.Where(x => x.Id == id));
+
+                hasilDiagnosis.HapusPenyakit(id);
+
                 status = true;
             }
             else if (namaPenyakit != "")
             {
-                dbo.Penyakits.RemoveRange(dbo.Penyakits.Where(x => x.Nama == namaPenyakit));
+                dbo.Penyakits.RemoveRange(dbo.Penyakits
+                .Where(x => x.Nama == namaPenyakit));
+
+                hasilDiagnosis.HapusPenyakit(namaPenyakit);
+
                 status = true;
             }
-            else if (detailPenyakit != "")
-            {
-                dbo.Penyakits.RemoveRange(dbo.Penyakits.Where(x => x.DetailPenyakit == detailPenyakit));
-                status = true;
-            }
-            else { status = false; }
+            
 
             dbo.SaveChanges();
             return status;

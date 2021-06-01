@@ -13,44 +13,32 @@ namespace cehat
 {
     public partial class FormDiagnosis : Form
     {
-        string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBCehat.mdf;Integrated Security=True";
+        AturanGejala aturan = new AturanGejala();
+
+        // agar form draggable walaupun borderless
+        bool mousedown;
+        private Point offset;
+
         public FormDiagnosis()
         {
             InitializeComponent();
         }
 
-        private void checkedList()
+        private void CheckedList()
         {
-            using (SqlConnection con = new SqlConnection(path))
+            try
             {
-                con.Open();
-
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select distinct DetailGejala from AturanGejala";
-                cmd.ExecuteNonQuery();
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    clGejala.Items.Add(dr["DetailGejala"].ToString());
-                }
-
-                con.Close();
+                clGejala.DataSource = Gejala.GetListDetailGejala();
             }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void FormDiagnosis_Load(object sender, EventArgs e)
         {
-            checkedList();
-        }
+            clGejala.Items.Clear();
 
-        // agar form draggable walaupun borderless
-        bool mousedown;
-        private Point offset;
+            CheckedList();
+        }
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -86,7 +74,13 @@ namespace cehat
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-
+            var gejalaTerpilih = clGejala.CheckedItems;
+            int jumlahGejalaTerpilih = gejalaTerpilih.Count;
+            foreach(var cek in gejalaTerpilih)
+            {
+                MessageBox.Show(cek.ToString());
+            }
+            MessageBox.Show(jumlahGejalaTerpilih.ToString());
         }
     }
 }

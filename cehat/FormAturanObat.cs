@@ -113,37 +113,36 @@ namespace cehat
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            if (comboBoxPenyakit.SelectedItem != null && idObat != null)
+            try
             {
-                if (aturan.Tambah((int)idPenyakit, idObat))
+                if (comboBoxPenyakit.SelectedItem != null && idObat != null)
                 {
-                    MessageBox.Show("Data berhasil ditambahkan!");
+                    if (aturan.Tambah((int)idPenyakit, idObat))
+                    {
+                        MessageBox.Show("Data berhasil ditambahkan!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data gagal ditambahkan, kemungkinan karena data yang ditambahkan sudah ada");
+                    }
+                }
+                else if (comboBoxPenyakit.SelectedItem != null)
+                {
+                    if (aturan.Tambah(idPenyakit, null))
+                    {
+                        MessageBox.Show("Data berhasil ditambahkan!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data gagal ditambahkan, kemungkinan karena data yang ditambahkan sudah ada");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Data gagal ditambahkan, kemungkinan karena data yang ditambahkan sudah ada");
+                    MessageBox.Show("Data informasi tidak boleh kosong!");
                 }
             }
-            else if (comboBoxPenyakit.SelectedItem != null)
-            {
-                if (aturan.Tambah(idPenyakit, null))
-                {
-                    MessageBox.Show("Data berhasil ditambahkan!");
-                }
-                else
-                {
-                    MessageBox.Show("Data gagal ditambahkan, kemungkinan karena data yang ditambahkan sudah ada");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Data informasi tidak boleh kosong!");
-            }
-            
-            //}
-            //catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.StackTrace + "\n" + ex.Message + "\n" + ex.HelpLink); }
+            catch (Exception ex) { MessageBox.Show("Sumber exception" + ex.Source + "\n Stack Trace: " + ex.StackTrace + "\n Message: " + ex.Message); }
             ResetTb();
             DisplayData();
         }
@@ -173,6 +172,8 @@ namespace cehat
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            comboBoxObat.Text = "";
+            comboBoxPenyakit.Text = "";
 
             int baris = e.RowIndex;
             if (baris >= 0)
@@ -190,11 +191,6 @@ namespace cehat
                     comboBoxObat.Text = Obat.GetNama((int)idObat);
                 }
                 else { comboBoxObat.Text = ""; }
-            }
-            else
-            {
-                comboBoxObat.Text = "";
-                comboBoxPenyakit.Text = "";
             }
         }
 

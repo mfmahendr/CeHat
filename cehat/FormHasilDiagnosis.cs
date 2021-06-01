@@ -12,14 +12,15 @@ namespace cehat
 {
     public partial class FormHasilDiagnosis : Form
     {
+        // agar form draggable walaupun borderless
+        bool mousedown;
+        private Point offset;
+
         public FormHasilDiagnosis()
         {
             InitializeComponent();
         }
 
-        // agar form draggable walaupun borderless
-        bool mousedown;
-        private Point offset;
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;

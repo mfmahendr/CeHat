@@ -238,9 +238,15 @@ namespace cehat
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            textBoxNamaObat.Text = "";
+            textBoxDosisObat.Text = "";
+            textBoxEfekSamping.Text = "";
+            buttonTambah.Enabled = true;
+            buttonHapus.Enabled = false;
+            buttonUbah.Enabled = false;
+
             int baris = e.RowIndex;
-            int kolom = e.ColumnIndex;
-            if (baris >= 0 && kolom == 0)
+            if (baris >= 0)
             {
                 buttonTambah.Enabled = false;
                 buttonHapus.Enabled = true;
@@ -253,22 +259,11 @@ namespace cehat
                 {
                     textBoxDosisObat.Text = dataGridView1.Rows[baris].Cells[2].Value.ToString();
                 }
-                else { textBoxDosisObat.Text = ""; }
 
                 if (dataGridView1.Rows[baris].Cells[3].Value != null)
                 {
                     textBoxEfekSamping.Text = dataGridView1.Rows[baris].Cells[3].Value.ToString();
                 }
-                else { textBoxDosisObat.Text = ""; }
-            }
-            else
-            {
-                textBoxNamaObat.Text = "";
-                textBoxDosisObat.Text = "";
-                textBoxEfekSamping.Text = "";
-                buttonTambah.Enabled = true;
-                buttonHapus.Enabled = false;
-                buttonUbah.Enabled = false;
             }
         }
 

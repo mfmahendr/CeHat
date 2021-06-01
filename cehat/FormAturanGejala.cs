@@ -158,6 +158,9 @@ namespace cehat
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            comboBoxGejala.Text = "";
+            comboBoxPenyakit.Text = "";
+
             int baris = e.RowIndex;
             if (baris >= 0)
             {
@@ -169,11 +172,6 @@ namespace cehat
 
                 comboBoxPenyakit.Text = Penyakit.GetNamaBerdasarkan(idPenyakit);
                 comboBoxGejala.Text = Gejala.GetDetailGejala(idGejala);
-            }
-            else
-            {
-                comboBoxGejala.Text = "";
-                comboBoxPenyakit.Text = "";
             }
         }
 

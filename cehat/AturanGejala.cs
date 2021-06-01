@@ -42,6 +42,14 @@
             return dbo.ViewAturanGejalas.Where(x => x.DetailGejala.Contains(kondisi)).ToList();
         }
 
+        //public string GetPenyakitBerdasarkan(List<string> kumpulanGejala)
+        //{
+        //    foreach(string gejala in kumpulanGejala)
+        //    {
+
+        //    }
+        //}
+
         public bool Tambah(string namaPenyakit, string detailGejala)
         {
             status = false;

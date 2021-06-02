@@ -49,7 +49,7 @@ namespace cehat
             this.clGejala.HorizontalScrollbar = true;
             this.clGejala.Location = new System.Drawing.Point(28, 139);
             this.clGejala.Name = "clGejala";
-            this.clGejala.Size = new System.Drawing.Size(356, 225);
+            this.clGejala.Size = new System.Drawing.Size(356, 247);
             this.clGejala.TabIndex = 0;
             // 
             // buttonSubmit

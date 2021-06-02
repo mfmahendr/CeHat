@@ -56,7 +56,7 @@ namespace cehat
             this.comboBoxObat.FormattingEnabled = true;
             this.comboBoxObat.Location = new System.Drawing.Point(50, 263);
             this.comboBoxObat.Name = "comboBoxObat";
-            this.comboBoxObat.Size = new System.Drawing.Size(293, 33);
+            this.comboBoxObat.Size = new System.Drawing.Size(293, 28);
             this.comboBoxObat.TabIndex = 33;
             this.comboBoxObat.SelectedIndexChanged += new System.EventHandler(this.comboBoxObat_SelectedIndexChanged);
             this.comboBoxObat.Click += new System.EventHandler(this.comboBox_Click);
@@ -68,9 +68,9 @@ namespace cehat
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRefresh.ForeColor = System.Drawing.Color.White;
-            this.buttonRefresh.Location = new System.Drawing.Point(273, 359);
+            this.buttonRefresh.Location = new System.Drawing.Point(260, 359);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(122, 39);
+            this.buttonRefresh.Size = new System.Drawing.Size(83, 39);
             this.buttonRefresh.TabIndex = 31;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = false;
@@ -83,9 +83,9 @@ namespace cehat
             this.buttonHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHapus.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHapus.ForeColor = System.Drawing.Color.White;
-            this.buttonHapus.Location = new System.Drawing.Point(145, 359);
+            this.buttonHapus.Location = new System.Drawing.Point(155, 359);
             this.buttonHapus.Name = "buttonHapus";
-            this.buttonHapus.Size = new System.Drawing.Size(122, 39);
+            this.buttonHapus.Size = new System.Drawing.Size(83, 39);
             this.buttonHapus.TabIndex = 29;
             this.buttonHapus.Text = "Hapus";
             this.buttonHapus.UseVisualStyleBackColor = false;
@@ -98,9 +98,9 @@ namespace cehat
             this.buttonTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTambah.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.ForeColor = System.Drawing.Color.White;
-            this.buttonTambah.Location = new System.Drawing.Point(17, 359);
+            this.buttonTambah.Location = new System.Drawing.Point(50, 359);
             this.buttonTambah.Name = "buttonTambah";
-            this.buttonTambah.Size = new System.Drawing.Size(122, 39);
+            this.buttonTambah.Size = new System.Drawing.Size(83, 39);
             this.buttonTambah.TabIndex = 26;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
@@ -186,7 +186,7 @@ namespace cehat
             this.lblCari.Font = new System.Drawing.Font("Arial Black", 10F);
             this.lblCari.Location = new System.Drawing.Point(396, 83);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(71, 28);
+            this.lblCari.Size = new System.Drawing.Size(60, 24);
             this.lblCari.TabIndex = 46;
             this.lblCari.Text = "Cari :";
             this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,7 +196,7 @@ namespace cehat
             this.tbCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCari.Location = new System.Drawing.Point(471, 83);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(280, 30);
+            this.tbCari.Size = new System.Drawing.Size(280, 26);
             this.tbCari.TabIndex = 45;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
@@ -208,7 +208,7 @@ namespace cehat
             this.comboBoxPenyakit.FormattingEnabled = true;
             this.comboBoxPenyakit.Location = new System.Drawing.Point(50, 187);
             this.comboBoxPenyakit.Name = "comboBoxPenyakit";
-            this.comboBoxPenyakit.Size = new System.Drawing.Size(293, 33);
+            this.comboBoxPenyakit.Size = new System.Drawing.Size(293, 28);
             this.comboBoxPenyakit.TabIndex = 32;
             this.comboBoxPenyakit.SelectedIndexChanged += new System.EventHandler(this.comboBoxPenyakit_SelectedIndexChanged);
             this.comboBoxPenyakit.Click += new System.EventHandler(this.comboBox_Click);

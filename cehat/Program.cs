@@ -16,7 +16,7 @@ namespace cehat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDiagnosis());
+            Application.Run(new FormLoading());
         }
     }
 }

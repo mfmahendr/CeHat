@@ -40,20 +40,20 @@ namespace cehat
             dbo.SaveChanges();
         }
 
-        public void UbahFrekuensi(int id, int frekuensi)
+        public void UbahFrekuensi(int id)
         {
             var hasil = dbo.HasilDiagnosis.Where(x => x.Id == id).Single();
 
-            hasil.Frekuensi = frekuensi + 1;
+            hasil.Frekuensi = hasil.Frekuensi + 1;
 
             dbo.SaveChanges();
         }
 
-        public void UbahFrekuensi(string namaPenyakit, int frekuensi)
+        public void UbahFrekuensi(string namaPenyakit)
         {
             var hasil = dbo.HasilDiagnosis.Where(x => x.NamaPenyakit == namaPenyakit).Single();
             
-            hasil.Frekuensi = frekuensi + 1;
+            hasil.Frekuensi = hasil.Frekuensi + 1;
             
             dbo.SaveChanges();
         }

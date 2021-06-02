@@ -12,7 +12,9 @@ namespace cehat
 {
     public partial class FormHasilDiagnosis : Form
     {
+        #region Field
         private AturanObat aturanObat = new AturanObat();
+        HasilDiagnosis hasilDiagnosis = new HasilDiagnosis();
         private Penyakit penyakit = new Penyakit();
         private Obat obat = new Obat();
         private string namaObat;
@@ -22,13 +24,19 @@ namespace cehat
         // agar form draggable walaupun borderless
         bool mousedown;
         private Point offset;
+        #endregion
 
+        #region Konstruktor
         public FormHasilDiagnosis(int idPenyakit)
         {
             InitializeComponent();
-            namaObat = string.Empty;
+            namaObat = "Tidak ada";
             dosisObat = string.Empty;
             efekObat = string.Empty;
+
+            string namaPenyakit = penyakit.GetNamaBerdasarkan(idPenyakit);
+            hasilDiagnosis.UbahFrekuensi(namaPenyakit);
+
             try
             {
                 tbNamaPenyakit.Text = penyakit.GetNamaBerdasarkan(idPenyakit);
@@ -45,7 +53,7 @@ namespace cehat
             }
             catch (InvalidOperationException)
             {
-                namaObat = string.Empty;
+                namaObat = "Tidak ada";
                 dosisObat = string.Empty;
                 efekObat = string.Empty;
             }
@@ -54,6 +62,7 @@ namespace cehat
             tbDosis.Text = dosisObat;
             tbEfekSamping.Text = efekObat;
         }
+        #endregion
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {

@@ -122,12 +122,6 @@
     <Compile Include="FormDiagnosis.Designer.cs">
       <DependentUpon>FormDiagnosis.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDiagnosis2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDiagnosis2.Designer.cs">
-      <DependentUpon>FormDiagnosis2.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormHasilDiagnosis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,9 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDiagnosis.resx">
       <DependentUpon>FormDiagnosis.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDiagnosis2.resx">
-      <DependentUpon>FormDiagnosis2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHasilDiagnosis.resx">
       <DependentUpon>FormHasilDiagnosis.cs</DependentUpon>

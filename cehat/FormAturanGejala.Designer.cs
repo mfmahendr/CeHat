@@ -29,8 +29,8 @@ namespace cehat
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAturanGejala));
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonHapus = new System.Windows.Forms.Button();
@@ -55,9 +55,9 @@ namespace cehat
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRefresh.ForeColor = System.Drawing.Color.White;
-            this.buttonRefresh.Location = new System.Drawing.Point(629, 404);
+            this.buttonRefresh.Location = new System.Drawing.Point(264, 359);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(122, 39);
+            this.buttonRefresh.Size = new System.Drawing.Size(79, 39);
             this.buttonRefresh.TabIndex = 22;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = false;
@@ -70,9 +70,9 @@ namespace cehat
             this.buttonHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHapus.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHapus.ForeColor = System.Drawing.Color.White;
-            this.buttonHapus.Location = new System.Drawing.Point(221, 325);
+            this.buttonHapus.Location = new System.Drawing.Point(157, 359);
             this.buttonHapus.Name = "buttonHapus";
-            this.buttonHapus.Size = new System.Drawing.Size(122, 39);
+            this.buttonHapus.Size = new System.Drawing.Size(79, 39);
             this.buttonHapus.TabIndex = 20;
             this.buttonHapus.Text = "Hapus";
             this.buttonHapus.UseVisualStyleBackColor = false;
@@ -85,9 +85,9 @@ namespace cehat
             this.buttonTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTambah.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.ForeColor = System.Drawing.Color.White;
-            this.buttonTambah.Location = new System.Drawing.Point(50, 325);
+            this.buttonTambah.Location = new System.Drawing.Point(50, 359);
             this.buttonTambah.Name = "buttonTambah";
-            this.buttonTambah.Size = new System.Drawing.Size(122, 39);
+            this.buttonTambah.Size = new System.Drawing.Size(79, 39);
             this.buttonTambah.TabIndex = 17;
             this.buttonTambah.Text = "Tambah";
             this.buttonTambah.UseVisualStyleBackColor = false;
@@ -100,23 +100,23 @@ namespace cehat
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(401, 119);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -134,7 +134,7 @@ namespace cehat
             this.comboBoxPenyakit.FormattingEnabled = true;
             this.comboBoxPenyakit.Location = new System.Drawing.Point(50, 187);
             this.comboBoxPenyakit.Name = "comboBoxPenyakit";
-            this.comboBoxPenyakit.Size = new System.Drawing.Size(293, 33);
+            this.comboBoxPenyakit.Size = new System.Drawing.Size(293, 28);
             this.comboBoxPenyakit.TabIndex = 23;
             this.comboBoxPenyakit.SelectedIndexChanged += new System.EventHandler(this.comboBoxPenyakit_SelectedIndexChanged);
             this.comboBoxPenyakit.Click += new System.EventHandler(this.comboBoxPenyakit_Click);
@@ -147,7 +147,7 @@ namespace cehat
             this.comboBoxGejala.FormattingEnabled = true;
             this.comboBoxGejala.Location = new System.Drawing.Point(50, 263);
             this.comboBoxGejala.Name = "comboBoxGejala";
-            this.comboBoxGejala.Size = new System.Drawing.Size(293, 33);
+            this.comboBoxGejala.Size = new System.Drawing.Size(293, 28);
             this.comboBoxGejala.TabIndex = 24;
             this.comboBoxGejala.SelectedIndexChanged += new System.EventHandler(this.comboBoxGejala_SelectedIndexChanged);
             this.comboBoxGejala.Click += new System.EventHandler(this.comboBoxPenyakit_Click);
@@ -197,7 +197,7 @@ namespace cehat
             this.lblCari.Font = new System.Drawing.Font("Arial Black", 10F);
             this.lblCari.Location = new System.Drawing.Point(396, 84);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(71, 28);
+            this.lblCari.Size = new System.Drawing.Size(60, 24);
             this.lblCari.TabIndex = 48;
             this.lblCari.Text = "Cari :";
             this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -207,7 +207,7 @@ namespace cehat
             this.tbCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCari.Location = new System.Drawing.Point(471, 83);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(280, 30);
+            this.tbCari.Size = new System.Drawing.Size(280, 26);
             this.tbCari.TabIndex = 47;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 

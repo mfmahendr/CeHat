@@ -41,13 +41,18 @@
             return dbo.ViewAturanObats.Where(x => x.Nama.Contains(kondisi)).ToList();
         }
 
-        public string GetNamaObat(int? id)
+        public string GetNamaObat(int? idObat)
         {
-            if (id != null)
+            if (idObat != null)
             {
-                return Obat.GetNama((int)id);
+                return Obat.GetNamaBerdasarkan((int)idObat);
             }
             else { return null; }
+        }
+
+        public int? GetIdObat(int idPenyakit)
+        {
+            return dbo.AturanObats.Where(x => x.IdPenyakit == idPenyakit).Select(x => x.IdObat).Single();
         }
 
         public bool Tambah(string namaPenyakit, string namaObat = "")
@@ -83,7 +88,6 @@
                 dbo.SaveChanges();
                 status = true;
             }
-
             return status;
         }
 

@@ -41,7 +41,7 @@ namespace cehat
             {
                 try
                 {
-                    if (admin.Login(textBoxUsername.Text, textBoxPassword.Text))
+                    if (admin.CekBerdasarkan(textBoxUsername.Text, textBoxPassword.Text))
                     {
                         MessageBox.Show("Login Berhasil!");
                         this.Hide();

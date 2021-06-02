@@ -16,6 +16,8 @@ namespace cehat
         //Aturan aturan = new Aturan();
         #region Atribut
         private AturanGejala aturan = new AturanGejala();
+        private Penyakit penyakit = new Penyakit();
+        private Gejala gejala = new Gejala();
         private int idPenyakit;
         private int idGejala;
 
@@ -46,8 +48,8 @@ namespace cehat
 
         private void IsiComboBox()
         {
-            comboBoxPenyakit.DataSource = Penyakit.GetListNamaPenyakit();
-            comboBoxGejala.DataSource = Gejala.GetListDetailGejala();
+            comboBoxPenyakit.DataSource = penyakit.GetListNamaPenyakit();
+            comboBoxGejala.DataSource = gejala.GetListDetailGejala();
         }
 
         private void ResetTb()
@@ -111,24 +113,25 @@ namespace cehat
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            //try {
-            if (comboBoxPenyakit.SelectedItem != null && comboBoxGejala.SelectedItem != null)
+            try
             {
-                if (aturan.Tambah(idPenyakit, idGejala))
+                if (comboBoxPenyakit.SelectedItem != null && comboBoxGejala.SelectedItem != null)
                 {
-                    MessageBox.Show("Data berhasil ditambahkan!");
+                    if (aturan.Tambah(idPenyakit, idGejala))
+                    {
+                        MessageBox.Show("Data berhasil ditambahkan!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data gagal ditambahkan, kemungkinan karena data yang ditambahkan sudah ada");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Data gagal ditambahkan, kemungkinan karena data yang ditambahkan sudah ada");
+                    MessageBox.Show("Data aturan tidak boleh kosong! Silakan pilih data yang akan ditambahkan");
                 }
             }
-            else
-            {
-                MessageBox.Show("Data aturan tidak boleh kosong! Silakan pilih data yang akan ditambahkan");
-            }
-            //}
-            //catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.StackTrace + "\n" + ex.Message + "\n" + ex.HelpLink); }
+            catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.StackTrace + "\n" + ex.Message + "\n" + ex.HelpLink); }
             ResetTb();
             DisplayData();
         }
@@ -170,8 +173,8 @@ namespace cehat
                 idPenyakit = (int)dataGridView1.Rows[baris].Cells[0].Value;
                 idGejala = (int)dataGridView1.Rows[baris].Cells[1].Value;
 
-                comboBoxPenyakit.Text = Penyakit.GetNamaBerdasarkan(idPenyakit);
-                comboBoxGejala.Text = Gejala.GetDetailGejala(idGejala);
+                comboBoxPenyakit.Text = penyakit.GetNamaBerdasarkan(idPenyakit);
+                comboBoxGejala.Text = gejala.GetDetailGejala(idGejala);
             }
         }
 
@@ -189,13 +192,13 @@ namespace cehat
         private void comboBoxPenyakit_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxPenyakit.SelectedItem != null)
-                idPenyakit = Penyakit.GetIdBerdasarkan(comboBoxPenyakit.SelectedItem.ToString());
+                idPenyakit = penyakit.GetIdBerdasarkan(comboBoxPenyakit.SelectedItem.ToString());
         }
 
         private void comboBoxGejala_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxGejala.SelectedItem != null)
-                idGejala = Gejala.GetIdBerdasarkan(comboBoxGejala.SelectedItem.ToString());
+                idGejala = gejala.GetIdBerdasarkan(comboBoxGejala.SelectedItem.ToString());
         }
     }
 }

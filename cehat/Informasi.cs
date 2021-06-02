@@ -10,7 +10,7 @@ namespace cehat
     public abstract class Informasi
     {
 
-        protected static CeHatContext dbo = Akses.Tabel();
+        protected CeHatContext dbo = Akses.Tabel();
         protected bool status;
 
         public int Id { get; set; }

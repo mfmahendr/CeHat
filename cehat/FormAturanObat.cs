@@ -16,6 +16,8 @@ namespace cehat
     {
         #region Atribut
         private AturanObat aturan = new AturanObat();
+        private Penyakit penyakit = new Penyakit();
+        private Obat obat = new Obat();
 
         // agar form draggable walaupun borderless
         private bool mousedown;
@@ -39,8 +41,8 @@ namespace cehat
 
         private void IsiComboBox()
         {
-            comboBoxPenyakit.DataSource = Penyakit.GetListNamaPenyakit().ToList();
-            comboBoxObat.DataSource = Obat.GetListNamaObat().ToList();
+            comboBoxPenyakit.DataSource = penyakit.GetListNamaPenyakit().ToList();
+            comboBoxObat.DataSource = obat.GetListNamaObat().ToList();
         }
 
         private void ResetTb()
@@ -184,11 +186,11 @@ namespace cehat
                 idPenyakit = (int)dataGridView1.Rows[baris].Cells[0].Value;
                 idObat = (int?)dataGridView1.Rows[baris].Cells[1].Value;
 
-                comboBoxPenyakit.Text = Penyakit.GetNamaBerdasarkan(idPenyakit);
+                comboBoxPenyakit.Text = penyakit.GetNamaBerdasarkan(idPenyakit);
 
                 if (idObat != null) 
                 {
-                    comboBoxObat.Text = Obat.GetNama((int)idObat);
+                    comboBoxObat.Text = obat.GetNamaBerdasarkan((int)idObat);
                 }
                 else { comboBoxObat.Text = ""; }
             }
@@ -208,13 +210,13 @@ namespace cehat
         private void comboBoxPenyakit_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(comboBoxPenyakit.SelectedItem != null)
-                idPenyakit = Penyakit.GetIdBerdasarkan(comboBoxPenyakit.SelectedItem.ToString());
+                idPenyakit = penyakit.GetIdBerdasarkan(comboBoxPenyakit.SelectedItem.ToString());
         }
 
         private void comboBoxObat_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxObat.SelectedItem != null)
-                idObat = Obat.GetIdBerdasarkan(comboBoxObat.SelectedItem.ToString());
+                idObat = obat.GetIdBerdasarkan(comboBoxObat.SelectedItem.ToString());
         }
         #endregion
 

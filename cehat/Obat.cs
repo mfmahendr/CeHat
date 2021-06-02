@@ -23,29 +23,40 @@ namespace cehat
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AturanObat> AturanObats { get; set; }
 
-        public static List<Obat> GetListSemuaDataBerdasarkan(int id)
+        public List<Obat> GetDataBerdasarkan(int id)
         {
             return dbo.Obats.Where(x => x.Id == id).ToList();
         }
 
-        public static List<Obat> GetListSemuaDataBerdasarkan(string namaObat)
+
+        public List<Obat> GetDataBerdasarkan(string namaObat)
         {
             return dbo.Obats.Where(x => x.Nama == namaObat).ToList();
         }
 
-        public static List<string> GetListNamaObat()
+        public List<string> GetListNamaObat()
         {
             return dbo.Obats.Select(x => x.Nama).ToList();
         }
 
-        public static string GetNama(int id)
-        {
-            return dbo.Obats.Where(x => x.Id == id).Select(x => x.Nama).Single();
-        }
-
-        public static int GetIdBerdasarkan(string namaObat)
+        public int GetIdBerdasarkan(string namaObat)
         {
             return dbo.Obats.Where(x => x.Nama == namaObat).Select(x => x.Id).Single();
+        }
+
+        public string GetDosisBerdasarkan(int idObat)
+        {
+            return dbo.Obats.Where(x => x.Id == idObat).Select(x => x.DosisObat).Single();
+        }
+
+        public string GetEfekSampingBerdasarkan(int idObat)
+        {
+            return dbo.Obats.Where(x => x.Id == idObat).Select(x => x.EfekObat).Single();
+        }
+
+        public string GetNamaBerdasarkan(int id)
+        {
+            return dbo.Obats.Where(x => x.Id == id).Select(x => x.Nama).Single();
         }
 
         public bool Tambah(string namaObat, string dosis = "", string efek = "")

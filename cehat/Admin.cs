@@ -13,7 +13,6 @@ namespace cehat
     public partial class Admin
     {
         private readonly CeHatContext dbo = Akses.Tabel();
-        private Admin adminBaru;
         bool status;
 
         public int Id { get; set; }
@@ -56,22 +55,18 @@ namespace cehat
             return dbo.Admins.Where(x => x.Id == id).Select(x => x.Username).ToString();
         }
 
-        public bool Login(string username, string password)
+        public bool CekBerdasarkan(string username = "", string password = "")
         {
-            status = false;
+            bool tempStatus = false;
 
-            var items = dbo.Admins.Where(x => x.Username == username && x.Password == password);
+            if (username != "" && password != "")
+                tempStatus = dbo.Admins.Any(x => x.Username == username && x.Password == password);
+            else if (username != "")
+                tempStatus = dbo.Admins.Any(x => x.Username == username);
+            else if (password != "")
+                tempStatus = dbo.Admins.Any(x => x.Password == password);
 
-            if (items.Count() != 0)
-            {
-                status = true;
-            }
-            else
-            {
-                status = false;
-            }
-
-            return status;
+            return tempStatus;
         }
 
         public bool Tambah(string username, string password)
@@ -87,7 +82,6 @@ namespace cehat
                 });
                 dbo.SaveChanges();
                 status = true;
-
             }
 
             return status;
@@ -99,7 +93,7 @@ namespace cehat
 
             if (username != "" && password != "")
             {
-                if (!dbo.Admins.Any(x => x.Username == username) && !dbo.Admins.Any(x => x.Password == password))
+                if (!CekBerdasarkan(username: username) && !CekBerdasarkan(password: password))
                 {
                     var admin = dbo.Admins.Where(x => x.Id == kondisi);
                     foreach (var x in admin)
@@ -112,7 +106,7 @@ namespace cehat
             }
             else if (username != "")
             {
-                if (!dbo.Admins.Any(x => x.Username == username))
+                if (!CekBerdasarkan(username: username))
                 {
                     var admin = dbo.Admins.Where(x => x.Id == kondisi);
                     foreach (var x in admin)
@@ -124,7 +118,7 @@ namespace cehat
             }
             else if (password != "")
             {
-                if (!dbo.Admins.Any(x => x.Password == password))
+                if (!CekBerdasarkan(password: password))
                 {
                     var admin = dbo.Admins.Where(x => x.Id == kondisi).Single();
                

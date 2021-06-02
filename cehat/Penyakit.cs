@@ -28,29 +28,34 @@ namespace cehat
         public virtual ICollection<AturanObat> AturanObats { get; set; }
 
 
-        public static Penyakit GetDataBerdasarkan(int id)
+        public Penyakit GetDataBerdasarkan(int id)
         {
             return dbo.Penyakits.Where(x => x.Id == id).Single();
         }
 
-        public static List<Penyakit> GetDataBerdasarkan(string namaPenyakit)
+        public List<Penyakit> GetDataBerdasarkan(string namaPenyakit)
         {
             return dbo.Penyakits.Where(x => x.Nama == namaPenyakit).ToList();
         }
 
-        public static List<string> GetListNamaPenyakit()
+        public List<string> GetListNamaPenyakit()
         {
             return dbo.Penyakits.Select(x => x.Nama).ToList();
         }
 
-        public static string GetNamaBerdasarkan(int id)
+        public int GetIdBerdasarkan(string namaPenyakit)
+        {
+            return dbo.Penyakits.Where(x => x.Nama == namaPenyakit).Select(x => x.Id).Single();
+        }
+
+        public string GetNamaBerdasarkan(int id)
         {
             return dbo.Penyakits.Where(x => x.Id == id).Select(x => x.Nama).Single();
         }
 
-        public static int GetIdBerdasarkan(string namaPenyakit)
+        public string GetDeskripsiBerdasarkan(int id)
         {
-            return dbo.Penyakits.Where(x => x.Nama == namaPenyakit).Select(x => x.Id).Single();
+            return dbo.Penyakits.Where(x => x.Id == id).Select(x => x.DetailPenyakit).Single();
         }
 
         public bool Tambah(string namaPenyakit, string detail)

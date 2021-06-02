@@ -13,10 +13,14 @@ namespace cehat
 {
     public partial class FormDiagnosis : Form
     {
-        AturanGejala aturan = new AturanGejala();
+        private AturanGejala aturan = new AturanGejala();
+        private Gejala gejala = new Gejala();
+        private List<int> kumpulanIdGejala;
+        private bool status;
+        private int tempId;
 
         // agar form draggable walaupun borderless
-        bool mousedown;
+        private bool mousedown;
         private Point offset;
 
         public FormDiagnosis()
@@ -28,9 +32,15 @@ namespace cehat
         {
             try
             {
-                clGejala.DataSource = Gejala.GetListDetailGejala();
+                clGejala.DataSource = gejala.GetListDetailGejala();
             }
-            catch(Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void Reset()
+        {
+            status = false;
+
         }
 
         private void FormDiagnosis_Load(object sender, EventArgs e)
@@ -39,6 +49,7 @@ namespace cehat
 
             CheckedList();
         }
+
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -62,7 +73,17 @@ namespace cehat
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            string message = "Serius ingin keluar?";
+            string caption = "Konfirmasi";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }
+            //this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -74,13 +95,47 @@ namespace cehat
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            var gejalaTerpilih = clGejala.CheckedItems;
-            int jumlahGejalaTerpilih = gejalaTerpilih.Count;
-            foreach(var cek in gejalaTerpilih)
+            int jumlahGejalaTerpilih = clGejala.CheckedItems.Count;
+
+            // memilih id penyakit yang memiliki jumlah id gejala yang sama
+            var sesuatu = Akses.Tabel().AturanGejalas.GroupBy(x => x.IdPenyakit).Where(y => y.Count() == jumlahGejalaTerpilih).ToList();
+
+            if (sesuatu.Count() != 0)
             {
-                MessageBox.Show(cek.ToString());
+                List<int> listIdGejalaTerpilih = new List<int>();
+
+                foreach (var gejalaTerpilih in clGejala.CheckedItems)
+                {
+                    tempId = Akses.Tabel().Gejalas.Where(x => x.DetailGejala == gejalaTerpilih.ToString()).Select(x => x.Id).Single();
+                    listIdGejalaTerpilih.Add(tempId);
+                }
+
+                // Mengecek setiap list id gejala dari penyakit dengan jumlah gejala yang sama
+                // dengan list id gejala yang dipilih
+                foreach (var idPenyakit in sesuatu)
+                {
+                    // mendapatkan kumpulan id gejala dari id penyakit
+                    kumpulanIdGejala = Akses.Tabel().AturanGejalas.Where(x => x.IdPenyakit == idPenyakit.Key)
+                                            .Select(x => x.IdGejala).ToList();
+
+
+                    status = Enumerable.SequenceEqual(listIdGejalaTerpilih.OrderBy(x => x), kumpulanIdGejala.OrderBy(x => x));
+                    if (status)
+                    {
+                        MessageBox.Show(status.ToString());
+                        FormHasilDiagnosis laporanHasil = new FormHasilDiagnosis(idPenyakit.Key);
+                        this.Hide();
+                        laporanHasil.Show();
+                    }
+                }
+
+                if(!status)
+                    MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan.");
             }
-            MessageBox.Show(jumlahGejalaTerpilih.ToString());
+            else
+                MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan. Gakada jumlah penyakit yang sama");
+
+            Reset();
         }
     }
 }

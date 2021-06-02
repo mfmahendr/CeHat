@@ -96,44 +96,50 @@ namespace cehat
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
             int jumlahGejalaTerpilih = clGejala.CheckedItems.Count;
-
-            // memilih id penyakit yang memiliki jumlah id gejala yang sama
-            var sesuatu = Akses.Tabel().AturanGejalas.GroupBy(x => x.IdPenyakit).Where(y => y.Count() == jumlahGejalaTerpilih).ToList();
-
-            if (sesuatu.Count() != 0)
+            try
             {
-                List<int> listIdGejalaTerpilih = new List<int>();
+                // memilih id penyakit yang memiliki jumlah id gejala yang sama
+                var kumpulanIdPenyakit = Akses.Tabel().AturanGejalas.GroupBy(x => x.IdPenyakit).Where(y => y.Count() == jumlahGejalaTerpilih).ToList();
 
-                foreach (var gejalaTerpilih in clGejala.CheckedItems)
+                if (kumpulanIdPenyakit.Count() != 0)
                 {
-                    tempId = Akses.Tabel().Gejalas.Where(x => x.DetailGejala == gejalaTerpilih.ToString()).Select(x => x.Id).Single();
-                    listIdGejalaTerpilih.Add(tempId);
-                }
+                    List<int> listIdGejalaTerpilih = new List<int>();
 
-                // Mengecek setiap list id gejala dari penyakit dengan jumlah gejala yang sama
-                // dengan list id gejala yang dipilih
-                foreach (var idPenyakit in sesuatu)
-                {
-                    // mendapatkan kumpulan id gejala dari id penyakit
-                    kumpulanIdGejala = Akses.Tabel().AturanGejalas.Where(x => x.IdPenyakit == idPenyakit.Key)
-                                            .Select(x => x.IdGejala).ToList();
-
-
-                    status = Enumerable.SequenceEqual(listIdGejalaTerpilih.OrderBy(x => x), kumpulanIdGejala.OrderBy(x => x));
-                    if (status)
+                    foreach (var gejalaTerpilih in clGejala.CheckedItems)
                     {
-                        MessageBox.Show(status.ToString());
-                        FormHasilDiagnosis laporanHasil = new FormHasilDiagnosis(idPenyakit.Key);
-                        this.Hide();
-                        laporanHasil.Show();
+                        tempId = Akses.Tabel().Gejalas.Where(x => x.DetailGejala == gejalaTerpilih.ToString()).Select(x => x.Id).Single();
+                        listIdGejalaTerpilih.Add(tempId);
                     }
-                }
 
-                if(!status)
-                    MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan.");
+                    // Mengecek setiap list id gejala dari penyakit dengan jumlah gejala yang sama
+                    // dengan list id gejala yang dipilih
+                    foreach (var idPenyakit in kumpulanIdPenyakit)
+                    {
+                        // mendapatkan kumpulan id gejala dari id penyakit
+                        kumpulanIdGejala = Akses.Tabel().AturanGejalas.Where(x => x.IdPenyakit == idPenyakit.Key)
+                                                .Select(x => x.IdGejala).ToList();
+
+
+                        status = Enumerable.SequenceEqual(listIdGejalaTerpilih.OrderBy(x => x), kumpulanIdGejala.OrderBy(x => x));
+                        if (status)
+                        {
+                            MessageBox.Show(status.ToString());
+                            FormHasilDiagnosis laporanHasil = new FormHasilDiagnosis(idPenyakit.Key);
+                            laporanHasil.Show();
+                            this.Hide();
+                        }
+                    }
+
+                    if (!status)
+                        MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan.");
+                }
+                else
+                    MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan. Gakada jumlah penyakit yang sama");
             }
-            else
-                MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan. Gakada jumlah penyakit yang sama");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             Reset();
         }

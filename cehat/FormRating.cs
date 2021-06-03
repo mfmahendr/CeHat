@@ -33,7 +33,6 @@ namespace cehat
                 comboBox1.Items.Add(i.ToString());
             }
 
-            rating.Rataan();
             label1.Text = Convert.ToString(rating.Rataan());
             reset();
         }
@@ -43,7 +42,6 @@ namespace cehat
             if (comboBox1.Text.ToString() != "" && textBox1.Text!= "")
             {
                 rating.Tambah(int.Parse(comboBox1.Text), textBox1.Text);
-                rating.Rataan();
 
                 label1.Text = Convert.ToString(rating.Rataan());
                 reset();

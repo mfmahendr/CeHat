@@ -142,7 +142,7 @@ namespace cehat
                 }
                 else { MessageBox.Show("Data gagal dihapus!"); }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message + "\n" + ex.StackTrace); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
 

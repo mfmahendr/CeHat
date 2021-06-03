@@ -10,6 +10,7 @@ namespace cehat
     [Table("Obat")]
     public partial class Obat : Informasi
     {
+        #region Atribut
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Obat()
         {
@@ -20,14 +21,17 @@ namespace cehat
 
         public string EfekObat { get; set; }
 
+        // Navigation properties
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AturanObat> AturanObats { get; set; }
+        #endregion
 
+        #region Method
+        #region Read
         public List<Obat> GetDataBerdasarkan(int id)
         {
             return dbo.Obats.Where(x => x.Id == id).ToList();
         }
-
 
         public List<Obat> GetDataBerdasarkan(string namaObat)
         {
@@ -58,6 +62,7 @@ namespace cehat
         {
             return dbo.Obats.Where(x => x.Id == id).Select(x => x.Nama).Single();
         }
+        #endregion
 
         public bool Tambah(string namaObat, string dosis = "", string efek = "")
         {
@@ -307,5 +312,6 @@ namespace cehat
             dbo.SaveChanges();
             return status;
         }
+        #endregion
     }
 }

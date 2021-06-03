@@ -24,12 +24,17 @@ namespace cehat
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            string halo = User.Halo(textBoxNama.Text);
-            MessageBox.Show(halo);
-            this.Hide();
+            if (textBoxNama.Text != "")
+            {
+                string halo = User.Halo(textBoxNama.Text);
+                MessageBox.Show(halo);
+                this.Hide();
 
-            FormMenuUser menu = new FormMenuUser();
-            menu.Show();
+                FormMenuUser menu = new FormMenuUser();
+                menu.Show();
+            }
+            else
+                MessageBox.Show("Masukkan nama Anda, supaya kita lebih akrab :)");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

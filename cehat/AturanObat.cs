@@ -10,7 +10,7 @@
     [Table("AturanObat")]
     public partial class AturanObat
     {
-        #region Field
+        #region Atribut
         private bool status;
         private CeHatContext dbo = Akses.Tabel();
 
@@ -31,6 +31,8 @@
 
         #endregion
 
+        #region Method
+        #region Read
         public List<ViewAturanObat> GetAturanObat()
         {
             return dbo.ViewAturanObats.Select(x => x).ToList();
@@ -54,6 +56,7 @@
         {
             return dbo.AturanObats.Where(x => x.IdPenyakit == idPenyakit).Select(x => x.IdObat).Single();
         }
+        #endregion
 
         public bool Tambah(string namaPenyakit, string namaObat = "")
         {
@@ -99,5 +102,6 @@
             dbo.SaveChanges();
             return true;
         }
+        #endregion
     }
 }

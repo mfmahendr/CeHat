@@ -51,5 +51,16 @@ namespace cehat
         {
             mousedown = false;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FormDiagnosis diagnosis = new FormDiagnosis();
+            diagnosis.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

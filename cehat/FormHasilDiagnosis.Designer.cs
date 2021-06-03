@@ -98,6 +98,7 @@ namespace cehat
             this.buttonUlangi.TabIndex = 19;
             this.buttonUlangi.Text = "Ulangi";
             this.buttonUlangi.UseVisualStyleBackColor = false;
+            this.buttonUlangi.Click += new System.EventHandler(this.buttonUlangi_Click);
             // 
             // buttonMenu
             // 
@@ -112,6 +113,7 @@ namespace cehat
             this.buttonMenu.TabIndex = 20;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = false;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             // 
             // panel1
             // 

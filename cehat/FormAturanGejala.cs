@@ -13,7 +13,6 @@ namespace cehat
 {
     public partial class FormAturanGejala : Form
     {
-        //Aturan aturan = new Aturan();
         #region Atribut
         private AturanGejala aturan = new AturanGejala();
         private Penyakit penyakit = new Penyakit();
@@ -65,19 +64,9 @@ namespace cehat
         }
         #endregion
 
-        private void FormAturanGejala_Load(object sender, EventArgs e)
-        {
-            comboBoxPenyakit.Items.Clear();
-            comboBoxGejala.Items.Clear();
+        #region Event
 
-            IsiComboBox();
-            ResetTb();
-            DisplayData();
-
-            dataGridView1.Columns[0].Width = 100;
-            dataGridView1.Columns[1].Width = 100;
-        }
-
+        #region Event UI
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -97,6 +86,20 @@ namespace cehat
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mousedown = false;
+        }
+        #endregion
+
+        private void FormAturanGejala_Load(object sender, EventArgs e)
+        {
+            comboBoxPenyakit.Items.Clear();
+            comboBoxGejala.Items.Clear();
+
+            IsiComboBox();
+            ResetTb();
+            DisplayData();
+
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 100;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -200,5 +203,7 @@ namespace cehat
             if (comboBoxGejala.SelectedItem != null)
                 idGejala = gejala.GetIdBerdasarkan(comboBoxGejala.SelectedItem.ToString());
         }
+        #endregion
+
     }
 }

@@ -60,6 +60,7 @@ namespace cehat
 
         public bool Tambah(string namaPenyakit, string detail)
         {
+            status = false;
 
             if (!dbo.Penyakits.Any(x => x.Nama == namaPenyakit))
             {
@@ -69,10 +70,6 @@ namespace cehat
                 
                 dbo.SaveChanges();
                 status = true;
-            }
-            else
-            {
-                status = false;
             }
 
             return status;

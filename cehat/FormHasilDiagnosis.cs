@@ -89,5 +89,17 @@ namespace cehat
         {
             this.Close();
         }
+
+        private void buttonUlangi_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            FormMenuAdmin menu = new FormMenuAdmin();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

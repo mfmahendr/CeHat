@@ -44,7 +44,7 @@ namespace cehat
         {
             var hasil = dbo.HasilDiagnosis.Where(x => x.Id == id).Single();
 
-            hasil.Frekuensi = hasil.Frekuensi + 1;
+            hasil.Frekuensi++;
 
             dbo.SaveChanges();
         }
@@ -53,7 +53,7 @@ namespace cehat
         {
             var hasil = dbo.HasilDiagnosis.Where(x => x.NamaPenyakit == namaPenyakit).Single();
             
-            hasil.Frekuensi = hasil.Frekuensi + 1;
+            hasil.Frekuensi++;
             
             dbo.SaveChanges();
         }

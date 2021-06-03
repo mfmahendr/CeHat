@@ -97,7 +97,16 @@ namespace cehat
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            string message = "Yakin ingin keluar?";
+            string caption = "Konfirmasi";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void FormAturanObat_Load(object sender, EventArgs e)

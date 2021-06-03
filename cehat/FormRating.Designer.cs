@@ -32,11 +32,11 @@ namespace cehat
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRating));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -52,27 +52,15 @@ namespace cehat
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(167, 144);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 33);
+            this.comboBox1.Size = new System.Drawing.Size(180, 28);
             this.comboBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(532, 267);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 108);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "0";
             // 
             // buttonSubmit
             // 
@@ -127,17 +115,32 @@ namespace cehat
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(451, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(325, 135);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "0.00";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormRating
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 480);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonSubmit);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
@@ -157,10 +160,10 @@ namespace cehat
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

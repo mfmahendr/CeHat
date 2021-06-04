@@ -47,9 +47,9 @@ namespace cehat
             return dbo.Gejalas.Where(x => x.Id == id).Select(x => x.DetailGejala).Single();
         }
 
-        public int GetIdBerdasarkan(string namaObat)
+        public int GetIdBerdasarkan(string detailGejala)
         {
-            return dbo.Gejalas.Where(x => x.DetailGejala == namaObat).Select(x => x.Id).Single();
+            return dbo.Gejalas.Where(x => x.DetailGejala == detailGejala).Select(x => x.Id).Single();
         }
 
         public bool Tambah(string gejala)

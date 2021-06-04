@@ -50,6 +50,16 @@
         //    }
         //}
 
+        public List<int> GetIdGejalaBerdasarkan(int idPenyakit)
+        {
+            return dbo.AturanGejalas.Where(x => x.IdPenyakit == idPenyakit).Select(x => x.IdGejala).ToList();
+        }
+
+        public List< IGrouping<int, AturanGejala> > GetIdPenyakitBerdasarkan(int jumlahGejala)
+        {
+            return dbo.AturanGejalas.GroupBy(x => x.IdPenyakit).Where(y => y.Count() == jumlahGejala).ToList();
+        }
+
         public bool Tambah(string namaPenyakit, string detailGejala)
         {
             status = false;

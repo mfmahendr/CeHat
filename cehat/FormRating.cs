@@ -14,6 +14,11 @@ namespace cehat
     public partial class FormRating : Form
     {
         string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBCehat.mdf;Integrated Security=True";
+        
+        // agar form draggable walaupun borderless
+        bool mousedown;
+        private Point offset;
+        
         public FormRating()
         {
             InitializeComponent();
@@ -48,11 +53,9 @@ namespace cehat
         }
         private void FormRating_Load(object sender, EventArgs e)
         {
-            int i;
-            for(i=1; i<=10; i++)
-            {
-                comboBox1.Items.Add(i.ToString());
-            }
+            List<int> listRating = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            comboBox1.Items.Add(listRating);
 
             average();
             reset();
@@ -88,9 +91,6 @@ namespace cehat
             }
         }
 
-        // agar form draggable walaupun borderless
-        bool mousedown;
-        private Point offset;
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;

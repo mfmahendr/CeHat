@@ -99,7 +99,8 @@ namespace cehat
             try
             {
                 // memilih id penyakit yang memiliki jumlah id gejala yang sama
-                var kumpulanIdPenyakit = Akses.Tabel().AturanGejalas.GroupBy(x => x.IdPenyakit).Where(y => y.Count() == jumlahGejalaTerpilih).ToList();
+                //var kumpulanIdPenyakit = Akses.Tabel().AturanGejalas.GroupBy(x => x.IdPenyakit).Where(y => y.Count() == jumlahGejalaTerpilih).ToList();
+                var kumpulanIdPenyakit = aturan.GetIdPenyakitBerdasarkan(jumlahGejalaTerpilih);
 
                 if (kumpulanIdPenyakit.Count() != 0)
                 {
@@ -107,7 +108,8 @@ namespace cehat
 
                     foreach (var gejalaTerpilih in clGejala.CheckedItems)
                     {
-                        tempId = Akses.Tabel().Gejalas.Where(x => x.DetailGejala == gejalaTerpilih.ToString()).Select(x => x.Id).Single();
+                        //tempId = Akses.Tabel().Gejalas.Where(x => x.DetailGejala == gejalaTerpilih.ToString()).Select(x => x.Id).Single();
+                        tempId = gejala.GetIdBerdasarkan(gejalaTerpilih.ToString());
                         listIdGejalaTerpilih.Add(tempId);
                     }
 
@@ -116,8 +118,7 @@ namespace cehat
                     foreach (var idPenyakit in kumpulanIdPenyakit)
                     {
                         // mendapatkan kumpulan id gejala dari id penyakit
-                        kumpulanIdGejala = Akses.Tabel().AturanGejalas.Where(x => x.IdPenyakit == idPenyakit.Key)
-                                                .Select(x => x.IdGejala).ToList();
+                        kumpulanIdGejala = aturan.GetIdGejalaBerdasarkan(idPenyakit.Key);
 
 
                         status = Enumerable.SequenceEqual(listIdGejalaTerpilih.OrderBy(x => x), kumpulanIdGejala.OrderBy(x => x));
@@ -134,7 +135,7 @@ namespace cehat
                         MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan.");
                 }
                 else
-                    MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan. Gakada jumlah penyakit yang sama");
+                    MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan.");
             }
             catch (Exception ex)
             {

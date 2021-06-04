@@ -56,10 +56,14 @@ namespace cehat
         {
             FormDiagnosis diagnosis = new FormDiagnosis();
             diagnosis.Show();
+            this.Hide();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            FormRating rating = new FormRating();
+            rating.Show();
+            this.Hide();
 
         }
     }

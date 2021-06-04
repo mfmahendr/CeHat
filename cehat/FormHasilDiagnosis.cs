@@ -64,6 +64,7 @@ namespace cehat
         }
         #endregion
 
+        #region event
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -101,5 +102,6 @@ namespace cehat
             menu.Show();
             this.Hide();
         }
+        #endregion
     }
 }

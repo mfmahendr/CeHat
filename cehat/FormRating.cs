@@ -14,36 +14,18 @@ namespace cehat
     public partial class FormRating : Form
     {
         string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBCehat.mdf;Integrated Security=True";
+<<<<<<< HEAD
         
         // agar form draggable walaupun borderless
         bool mousedown;
         private Point offset;
         
+=======
+        private Rating rating = new Rating();
+>>>>>>> dfcd46c0418fa8f6cab4ab14403513cbbbae4306
         public FormRating()
         {
             InitializeComponent();
-        }
-
-        private void average()
-        {
-            using (SqlConnection con = new SqlConnection(path))
-            {
-                con.Open();
-
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select cast(avg(Rating) as decimal (10,2)) from Rating";
-                cmd.ExecuteNonQuery();
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    label1.Text = dr.GetValue(0).ToString();
-                }
-
-
-                con.Close();
-            }
         }
 
         private void reset()
@@ -57,31 +39,17 @@ namespace cehat
 
             comboBox1.Items.Add(listRating);
 
-            average();
+            label1.Text = Convert.ToString(rating.Rataan());
             reset();
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
-            Rating rate = new Rating();
-            rate.RatingAplikasi = int.Parse(comboBox1.Text);
-            rate.KritikSaran = textBox1.Text;
-
             if (comboBox1.Text.ToString() != "" && textBox1.Text!= "")
             {
-                using (SqlConnection con = new SqlConnection(path))
-                {
-                    con.Open();
+                rating.Tambah(int.Parse(comboBox1.Text), textBox1.Text);
 
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "insert into Rating values('"+rate.RatingAplikasi+"', '" + rate.KritikSaran + "')";
-                    cmd.ExecuteNonQuery();
-
-                    con.Close();
-                }
-
-                average();
+                label1.Text = Convert.ToString(rating.Rataan());
                 reset();
                 MessageBox.Show("Terimakasih atas evaluasinya!");
             }

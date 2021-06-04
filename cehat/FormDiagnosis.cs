@@ -73,13 +73,13 @@ namespace cehat
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            string message = "Serius ingin keluar?";
+            string message = "Yakin ingin keluar?";
             string caption = "Konfirmasi";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
             result = MessageBox.Show(message, caption, buttons);
-            if (result == System.Windows.Forms.DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 this.Close();
             }

@@ -14,15 +14,12 @@ namespace cehat
     public partial class FormRating : Form
     {
         string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBCehat.mdf;Integrated Security=True";
-<<<<<<< HEAD
         
         // agar form draggable walaupun borderless
         bool mousedown;
         private Point offset;
         
-=======
         private Rating rating = new Rating();
->>>>>>> dfcd46c0418fa8f6cab4ab14403513cbbbae4306
         public FormRating()
         {
             InitializeComponent();

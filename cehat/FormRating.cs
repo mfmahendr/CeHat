@@ -17,8 +17,8 @@ namespace cehat
         // agar form draggable walaupun borderless
         bool mousedown;
         private Point offset;
-        
-        private Rating rating = new Rating();
+
+        private readonly Rating rating = new Rating();
         public FormRating()
         {
             InitializeComponent();
@@ -31,9 +31,7 @@ namespace cehat
         }
         private void FormRating_Load(object sender, EventArgs e)
         {
-            List<int> listRating = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-            comboBox1.Items.Add(listRating);
+            comboBox1.DataSource = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             label1.Text = Convert.ToString(rating.Rataan());
             reset();

@@ -16,7 +16,7 @@ namespace cehat
 
     public partial class FormDataAdmin : Form
     {
-        Admin admin = new Admin();
+         private readonly Admin admin = new Admin();
         private int id;
         
         // agar form draggable walaupun borderless
@@ -198,7 +198,7 @@ namespace cehat
             buttonHapus.Enabled = false;
             buttonUbah.Enabled = false;
 
-            if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+            if (e.RowIndex >= 0)
             {
                 buttonTambah.Enabled = false;
                 buttonHapus.Enabled = true;

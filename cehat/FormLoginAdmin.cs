@@ -15,7 +15,7 @@ namespace cehat
     {
 
         #region Atribut
-        private Admin admin = new Admin();
+        private readonly Admin admin = new Admin();
         // agar form draggable walaupun borderless
         private bool mousedown;
         private Point offset;
@@ -44,9 +44,9 @@ namespace cehat
                     if (admin.CekBerdasarkan(textBoxUsername.Text, textBoxPassword.Text))
                     {
                         MessageBox.Show("Login Berhasil!");
-                        this.Hide();
                         FormMenuAdmin menu = new FormMenuAdmin();
                         menu.Show();
+                        this.Hide();
                     }
                     else
                     {
@@ -72,9 +72,9 @@ namespace cehat
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormLogin login = new FormLogin();
             login.Show();
+            this.Hide();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

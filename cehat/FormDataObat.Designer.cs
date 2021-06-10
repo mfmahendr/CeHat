@@ -29,8 +29,8 @@ namespace cehat
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDataObat));
             this.textBoxNamaObat = new System.Windows.Forms.TextBox();
             this.textBoxDosisObat = new System.Windows.Forms.TextBox();
@@ -43,8 +43,8 @@ namespace cehat
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
-            this.lblCari = new System.Windows.Forms.Label();
             this.tbCari = new System.Windows.Forms.TextBox();
+            this.lblCari = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -86,29 +86,31 @@ namespace cehat
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.YellowGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Location = new System.Drawing.Point(392, 132);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(350, 239);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
@@ -211,18 +213,6 @@ namespace cehat
             this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
-            // lblCari
-            // 
-            this.lblCari.AutoSize = true;
-            this.lblCari.BackColor = System.Drawing.Color.White;
-            this.lblCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCari.Location = new System.Drawing.Point(387, 97);
-            this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(69, 29);
-            this.lblCari.TabIndex = 50;
-            this.lblCari.Text = "Cari :";
-            this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // tbCari
             // 
             this.tbCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -231,6 +221,18 @@ namespace cehat
             this.tbCari.Size = new System.Drawing.Size(280, 30);
             this.tbCari.TabIndex = 49;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
+            // 
+            // lblCari
+            // 
+            this.lblCari.AutoSize = true;
+            this.lblCari.BackColor = System.Drawing.Color.Transparent;
+            this.lblCari.Font = new System.Drawing.Font("Arial Black", 10F);
+            this.lblCari.Location = new System.Drawing.Point(385, 96);
+            this.lblCari.Name = "lblCari";
+            this.lblCari.Size = new System.Drawing.Size(71, 28);
+            this.lblCari.TabIndex = 50;
+            this.lblCari.Text = "Cari :";
+            this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormDataObat
             // 
@@ -251,7 +253,7 @@ namespace cehat
             this.Controls.Add(this.textBoxEfekSamping);
             this.Controls.Add(this.textBoxDosisObat);
             this.Controls.Add(this.textBoxNamaObat);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDataObat";
@@ -279,7 +281,7 @@ namespace cehat
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.Label lblCari;
         private System.Windows.Forms.TextBox tbCari;
+        private System.Windows.Forms.Label lblCari;
     }
 }

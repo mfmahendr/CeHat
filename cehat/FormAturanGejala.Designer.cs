@@ -120,8 +120,10 @@ namespace cehat
             this.dataGridView1.Location = new System.Drawing.Point(401, 119);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(350, 279);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
@@ -134,7 +136,7 @@ namespace cehat
             this.comboBoxPenyakit.FormattingEnabled = true;
             this.comboBoxPenyakit.Location = new System.Drawing.Point(50, 187);
             this.comboBoxPenyakit.Name = "comboBoxPenyakit";
-            this.comboBoxPenyakit.Size = new System.Drawing.Size(293, 28);
+            this.comboBoxPenyakit.Size = new System.Drawing.Size(293, 33);
             this.comboBoxPenyakit.TabIndex = 23;
             this.comboBoxPenyakit.SelectedIndexChanged += new System.EventHandler(this.comboBoxPenyakit_SelectedIndexChanged);
             this.comboBoxPenyakit.Click += new System.EventHandler(this.comboBoxPenyakit_Click);
@@ -147,7 +149,7 @@ namespace cehat
             this.comboBoxGejala.FormattingEnabled = true;
             this.comboBoxGejala.Location = new System.Drawing.Point(50, 263);
             this.comboBoxGejala.Name = "comboBoxGejala";
-            this.comboBoxGejala.Size = new System.Drawing.Size(293, 28);
+            this.comboBoxGejala.Size = new System.Drawing.Size(293, 33);
             this.comboBoxGejala.TabIndex = 24;
             this.comboBoxGejala.SelectedIndexChanged += new System.EventHandler(this.comboBoxGejala_SelectedIndexChanged);
             this.comboBoxGejala.Click += new System.EventHandler(this.comboBoxPenyakit_Click);
@@ -197,7 +199,7 @@ namespace cehat
             this.lblCari.Font = new System.Drawing.Font("Arial Black", 10F);
             this.lblCari.Location = new System.Drawing.Point(396, 84);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(60, 24);
+            this.lblCari.Size = new System.Drawing.Size(71, 28);
             this.lblCari.TabIndex = 48;
             this.lblCari.Text = "Cari :";
             this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -207,7 +209,7 @@ namespace cehat
             this.tbCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCari.Location = new System.Drawing.Point(471, 83);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(280, 26);
+            this.tbCari.Size = new System.Drawing.Size(280, 30);
             this.tbCari.TabIndex = 47;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 

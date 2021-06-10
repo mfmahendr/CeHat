@@ -13,7 +13,7 @@ namespace cehat
 {
     public partial class FormDataGejala : Form
     {
-        private Gejala gejala = new Gejala();
+        private readonly Gejala gejala = new Gejala();
         private int id;
 
         public FormDataGejala()

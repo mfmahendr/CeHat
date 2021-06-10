@@ -66,6 +66,8 @@ namespace cehat
 
         public bool Tambah(string namaObat, string dosis = "", string efek = "")
         {
+            status = true;
+
             if (dosis != "" && efek != "")
             {
 
@@ -83,10 +85,6 @@ namespace cehat
 
                     status = true;
                 }
-                else
-                {
-                    status = false;
-                }
             }
             else if (dosis != "")
             {
@@ -100,10 +98,6 @@ namespace cehat
                     });
                     dbo.SaveChanges();
                     status = true;
-                }
-                else
-                {
-                    status = false;
                 }
             }
             else if (efek != "")
@@ -119,10 +113,6 @@ namespace cehat
                     dbo.SaveChanges();
                     status = true;
                 }
-                else
-                {
-                    status = false;
-                }
             }
             else
             {
@@ -132,13 +122,7 @@ namespace cehat
                     dbo.SaveChanges();
                     status = true;
                 }
-                else
-                {
-                    status = false;
-                }
             }
-
-            
             return status;
         }
 

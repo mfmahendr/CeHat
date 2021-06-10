@@ -15,9 +15,9 @@ namespace cehat
     public partial class FormAturanObat : Form
     {
         #region Atribut
-        private AturanObat aturan = new AturanObat();
-        private Penyakit penyakit = new Penyakit();
-        private Obat obat = new Obat();
+        private readonly AturanObat aturan = new AturanObat();
+        private readonly Penyakit penyakit = new Penyakit();
+        private readonly Obat obat = new Obat();
 
         // agar form draggable walaupun borderless
         private bool mousedown;

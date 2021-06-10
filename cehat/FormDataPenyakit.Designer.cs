@@ -42,8 +42,8 @@ namespace cehat
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblCari = new System.Windows.Forms.Label();
             this.tbCari = new System.Windows.Forms.TextBox();
+            this.lblCari = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -158,6 +158,7 @@ namespace cehat
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(350, 239);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
@@ -200,18 +201,6 @@ namespace cehat
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // lblCari
-            // 
-            this.lblCari.AutoSize = true;
-            this.lblCari.BackColor = System.Drawing.Color.White;
-            this.lblCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCari.Location = new System.Drawing.Point(386, 97);
-            this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(69, 29);
-            this.lblCari.TabIndex = 48;
-            this.lblCari.Text = "Cari :";
-            this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // tbCari
             // 
             this.tbCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -220,6 +209,18 @@ namespace cehat
             this.tbCari.Size = new System.Drawing.Size(280, 30);
             this.tbCari.TabIndex = 47;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
+            // 
+            // lblCari
+            // 
+            this.lblCari.AutoSize = true;
+            this.lblCari.BackColor = System.Drawing.Color.Transparent;
+            this.lblCari.Font = new System.Drawing.Font("Arial Black", 10F);
+            this.lblCari.Location = new System.Drawing.Point(386, 96);
+            this.lblCari.Name = "lblCari";
+            this.lblCari.Size = new System.Drawing.Size(71, 28);
+            this.lblCari.TabIndex = 48;
+            this.lblCari.Text = "Cari :";
+            this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormDataPenyakit
             // 
@@ -265,7 +266,7 @@ namespace cehat
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblCari;
         private System.Windows.Forms.TextBox tbCari;
+        private System.Windows.Forms.Label lblCari;
     }
 }

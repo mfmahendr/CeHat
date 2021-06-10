@@ -22,16 +22,16 @@ namespace cehat
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormLoginAdmin login_admin = new FormLoginAdmin();
             login_admin.Show();
+            this.Hide();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormLoginUser login_user = new FormLoginUser();
             login_user.Show();
+            this.Hide();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)

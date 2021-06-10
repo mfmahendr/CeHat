@@ -13,8 +13,8 @@ namespace cehat
 {
     public partial class FormDiagnosis : Form
     {
-        private AturanGejala aturan = new AturanGejala();
-        private Gejala gejala = new Gejala();
+        private readonly AturanGejala aturan = new AturanGejala();
+        private readonly Gejala gejala = new Gejala();
         private List<int> kumpulanIdGejala;
         private bool status;
         private int tempId;
@@ -88,9 +88,9 @@ namespace cehat
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormMenuUser menu = new FormMenuUser();
             menu.Show();
+            this.Hide();
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)

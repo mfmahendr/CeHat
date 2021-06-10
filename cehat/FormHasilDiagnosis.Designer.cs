@@ -47,6 +47,7 @@ namespace cehat
             this.tbNamaPenyakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbNamaPenyakit.Location = new System.Drawing.Point(34, 145);
             this.tbNamaPenyakit.Name = "tbNamaPenyakit";
+            this.tbNamaPenyakit.ReadOnly = true;
             this.tbNamaPenyakit.Size = new System.Drawing.Size(312, 30);
             this.tbNamaPenyakit.TabIndex = 0;
             // 
@@ -56,6 +57,7 @@ namespace cehat
             this.tbDeskripsiPenyakit.Location = new System.Drawing.Point(34, 207);
             this.tbDeskripsiPenyakit.Multiline = true;
             this.tbDeskripsiPenyakit.Name = "tbDeskripsiPenyakit";
+            this.tbDeskripsiPenyakit.ReadOnly = true;
             this.tbDeskripsiPenyakit.Size = new System.Drawing.Size(312, 190);
             this.tbDeskripsiPenyakit.TabIndex = 1;
             // 
@@ -64,6 +66,7 @@ namespace cehat
             this.tbNamaObat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbNamaObat.Location = new System.Drawing.Point(448, 145);
             this.tbNamaObat.Name = "tbNamaObat";
+            this.tbNamaObat.ReadOnly = true;
             this.tbNamaObat.Size = new System.Drawing.Size(312, 30);
             this.tbNamaObat.TabIndex = 2;
             // 
@@ -73,6 +76,7 @@ namespace cehat
             this.tbDosis.Location = new System.Drawing.Point(448, 207);
             this.tbDosis.Multiline = true;
             this.tbDosis.Name = "tbDosis";
+            this.tbDosis.ReadOnly = true;
             this.tbDosis.Size = new System.Drawing.Size(312, 81);
             this.tbDosis.TabIndex = 3;
             // 
@@ -82,6 +86,7 @@ namespace cehat
             this.tbEfekSamping.Location = new System.Drawing.Point(448, 323);
             this.tbEfekSamping.Multiline = true;
             this.tbEfekSamping.Name = "tbEfekSamping";
+            this.tbEfekSamping.ReadOnly = true;
             this.tbEfekSamping.Size = new System.Drawing.Size(312, 74);
             this.tbEfekSamping.TabIndex = 4;
             // 

@@ -28,10 +28,9 @@ namespace cehat
             {
                 string halo = User.Halo(textBoxNama.Text);
                 MessageBox.Show(halo);
-                this.Hide();
-
                 FormMenuUser menu = new FormMenuUser();
                 menu.Show();
+                this.Hide();
             }
             else
                 MessageBox.Show("Masukkan nama Anda, supaya kita lebih akrab :)");
@@ -39,9 +38,9 @@ namespace cehat
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormLogin login = new FormLogin();
             login.Show();
+            this.Hide();
         }
 
 

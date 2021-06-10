@@ -14,7 +14,7 @@ namespace cehat
 {
     public partial class FormDataObat : Form
     {
-        private Obat obat = new Obat();
+        private readonly Obat obat = new Obat();
         private int id;
 
         // agar form draggable walaupun borderless
@@ -219,9 +219,9 @@ namespace cehat
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormMenuAdmin menu = new FormMenuAdmin();
             menu.Show();
+            this.Hide();
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

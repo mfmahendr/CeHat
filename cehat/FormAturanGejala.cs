@@ -14,9 +14,9 @@ namespace cehat
     public partial class FormAturanGejala : Form
     {
         #region Atribut
-        private AturanGejala aturan = new AturanGejala();
-        private Penyakit penyakit = new Penyakit();
-        private Gejala gejala = new Gejala();
+        private readonly AturanGejala aturan = new AturanGejala();
+        private readonly Penyakit penyakit = new Penyakit();
+        private readonly Gejala gejala = new Gejala();
         private int idPenyakit;
         private int idGejala;
 

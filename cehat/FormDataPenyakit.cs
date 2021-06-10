@@ -20,7 +20,7 @@ namespace cehat
 
         private int id;
 
-        private Penyakit penyakit = new Penyakit();
+        private readonly Penyakit penyakit = new Penyakit();
 
         public FormDataPenyakit()
         {
@@ -148,9 +148,9 @@ namespace cehat
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormMenuAdmin menu = new FormMenuAdmin();
             menu.Show();
+            this.Hide();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

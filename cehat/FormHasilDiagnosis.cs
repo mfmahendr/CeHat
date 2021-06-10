@@ -13,13 +13,13 @@ namespace cehat
     public partial class FormHasilDiagnosis : Form
     {
         #region Field
-        private AturanObat aturanObat = new AturanObat();
-        HasilDiagnosis hasilDiagnosis = new HasilDiagnosis();
-        private Penyakit penyakit = new Penyakit();
-        private Obat obat = new Obat();
-        private string namaObat;
-        private string dosisObat;
-        private string efekObat;
+        private readonly AturanObat aturanObat = new AturanObat();
+        private readonly HasilDiagnosis hasilDiagnosis = new HasilDiagnosis();
+        private readonly Penyakit penyakit = new Penyakit();
+        private readonly Obat obat = new Obat();
+        private readonly string namaObat;
+        private readonly string dosisObat;
+        private readonly string efekObat;
 
         // agar form draggable walaupun borderless
         bool mousedown;
@@ -93,6 +93,8 @@ namespace cehat
 
         private void buttonUlangi_Click(object sender, EventArgs e)
         {
+            FormDiagnosis formDiagnosis = new FormDiagnosis();
+            formDiagnosis.Show();
             this.Hide();
         }
 

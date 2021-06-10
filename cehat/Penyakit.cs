@@ -10,7 +10,7 @@ namespace cehat
     [Table("Penyakit")]
     public partial class Penyakit : Informasi
     {
-        private HasilDiagnosis hasilDiagnosis = new HasilDiagnosis();
+        private readonly HasilDiagnosis hasilDiagnosis = new HasilDiagnosis();
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Penyakit()

@@ -12,6 +12,10 @@ namespace cehat
 {
     public partial class FormMenuAdmin : Form
     {
+        // agar form draggable walaupun borderless
+        bool mousedown;
+        private Point offset;
+
         public FormMenuAdmin()
         {
             InitializeComponent();
@@ -19,42 +23,39 @@ namespace cehat
 
         private void pbDataAdmin_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormDataAdmin data = new FormDataAdmin();
             data.Show();
+            this.Hide();
         }
 
         private void pbDataGejala_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormDataGejala data = new FormDataGejala();
             data.Show();
+            this.Hide();
         }
 
         private void pbDataObat_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormDataObat data = new FormDataObat();
             data.Show();
+            this.Hide();
         }
 
         private void pbDataPenyakit_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormDataPenyakit data = new FormDataPenyakit();
             data.Show();
+            this.Hide();
         }
 
         private void pbAturanGejala_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormAturanGejala data = new FormAturanGejala();
             data.Show();
+            this.Hide();
         }
 
-        // agar form draggable walaupun borderless
-        bool mousedown;
-        private Point offset;
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             offset.X = e.X;
@@ -83,16 +84,16 @@ namespace cehat
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormLoginAdmin login = new FormLoginAdmin();
             login.Show();
+            this.Hide();
         }
 
         private void pbAturanObat_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormAturanObat data = new FormAturanObat();
             data.Show();
+            this.Hide();
         }
     }
 }

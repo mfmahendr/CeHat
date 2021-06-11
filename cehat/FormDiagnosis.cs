@@ -120,17 +120,15 @@ namespace cehat
                         // mendapatkan kumpulan id gejala dari id penyakit
                         kumpulanIdGejala = aturan.GetIdGejalaBerdasarkan(idPenyakit.Key);
 
-
                         status = Enumerable.SequenceEqual(listIdGejalaTerpilih.OrderBy(x => x), kumpulanIdGejala.OrderBy(x => x));
                         if (status)
                         {
-                            MessageBox.Show(status.ToString());
                             FormHasilDiagnosis laporanHasil = new FormHasilDiagnosis(idPenyakit.Key);
                             laporanHasil.Show();
                             this.Hide();
+                            break;
                         }
                     }
-
                     if (!status)
                         MessageBox.Show("Mohon maaf, penyakit Anda tidak ditemukan.");
                 }

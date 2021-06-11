@@ -46,9 +46,9 @@ namespace cehat
 
                 if (idObat != null)
                 {
-                    namaObat = obat.GetNamaBerdasarkan(idPenyakit);
-                    dosisObat = obat.GetDosisBerdasarkan(idPenyakit);
-                    efekObat = obat.GetEfekSampingBerdasarkan(idPenyakit);
+                    namaObat = obat.GetNamaBerdasarkan((int)idObat);
+                    dosisObat = obat.GetDosisBerdasarkan((int)idObat);
+                    efekObat = obat.GetEfekSampingBerdasarkan((int)idObat);
                 }
             }
             catch (InvalidOperationException)

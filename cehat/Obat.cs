@@ -50,12 +50,32 @@ namespace cehat
 
         public string GetDosisBerdasarkan(int idObat)
         {
-            return dbo.Obats.Where(x => x.Id == idObat).Select(x => x.DosisObat).Single();
+            string dosis;
+            try
+            {
+                dosis = dbo.Obats.Where(x => x.Id == idObat).Select(x => x.DosisObat).Single();
+            }
+            catch (InvalidOperationException)
+            {
+                dosis = "";
+            }
+
+            return dosis;
         }
 
         public string GetEfekSampingBerdasarkan(int idObat)
         {
-            return dbo.Obats.Where(x => x.Id == idObat).Select(x => x.EfekObat).Single();
+            string efekSamping;
+            try
+            {
+                efekSamping = dbo.Obats.Where(x => x.Id == idObat).Select(x => x.EfekObat).Single();
+            }
+            catch (InvalidOperationException)
+            {
+                efekSamping = "";
+            }
+
+            return efekSamping;
         }
 
         public string GetNamaBerdasarkan(int id)

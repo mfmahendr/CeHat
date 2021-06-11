@@ -14,7 +14,7 @@ namespace cehat
     {
         private static CeHatContext dbo;
         private static SqlConnection dbCehatSqlConnection;
-        private static string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\bin\Debug\DBCehat.mdf;Integrated Security=True";
+        private static string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DBCehat.mdf;Integrated Security=True";
 
         public static CeHatContext Tabel()
         {

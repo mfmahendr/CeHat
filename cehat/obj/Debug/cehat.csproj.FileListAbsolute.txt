@@ -32,8 +32,6 @@ C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.pdb
 D:\cehat\cehat\obj\Debug\cehat.csprojAssemblyReference.cache
 D:\cehat\cehat\obj\Debug\cehat.exe
 D:\cehat\cehat\obj\Debug\cehat.pdb
-D:\cehat\cehat\bin\Debug\DBCehat.mdf
-D:\cehat\cehat\bin\Debug\DBCehat_log.ldf
 D:\cehat\cehat\bin\Debug\cehat.exe.config
 D:\cehat\cehat\bin\Debug\cehat.exe
 D:\cehat\cehat\bin\Debug\cehat.pdb
@@ -60,3 +58,5 @@ D:\cehat\cehat\obj\Debug\cehat.Properties.Resources.resources
 D:\cehat\cehat\obj\Debug\cehat.csproj.GenerateResource.cache
 D:\cehat\cehat\obj\Debug\cehat.csproj.CoreCompileInputs.cache
 D:\cehat\cehat\obj\Debug\cehat.csproj.CopyComplete
+D:\cehat\cehat\bin\Debug\bin\Debug\DBCehat.mdf
+D:\cehat\cehat\bin\Debug\bin\Debug\DBCehat_log.ldf

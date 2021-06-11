@@ -100,7 +100,7 @@ namespace cehat
 
         private void buttonMenu_Click(object sender, EventArgs e)
         {
-            FormMenuAdmin menu = new FormMenuAdmin();
+            FormMenuUser menu = new FormMenuUser();
             menu.Show();
             this.Hide();
         }

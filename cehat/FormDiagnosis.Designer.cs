@@ -41,15 +41,15 @@ namespace cehat
             // 
             // clGejala
             // 
-            this.clGejala.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.clGejala.BackColor = System.Drawing.Color.Azure;
             this.clGejala.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.clGejala.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.clGejala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.clGejala.ForeColor = System.Drawing.Color.Navy;
             this.clGejala.FormattingEnabled = true;
             this.clGejala.HorizontalScrollbar = true;
             this.clGejala.Location = new System.Drawing.Point(28, 139);
             this.clGejala.Name = "clGejala";
-            this.clGejala.Size = new System.Drawing.Size(356, 247);
+            this.clGejala.Size = new System.Drawing.Size(394, 247);
             this.clGejala.TabIndex = 0;
             // 
             // buttonSubmit
@@ -59,7 +59,7 @@ namespace cehat
             this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
             this.buttonSubmit.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmit.Location = new System.Drawing.Point(140, 405);
+            this.buttonSubmit.Location = new System.Drawing.Point(28, 404);
             this.buttonSubmit.Name = "buttonSubmit";
             this.buttonSubmit.Size = new System.Drawing.Size(122, 39);
             this.buttonSubmit.TabIndex = 18;

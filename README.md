@@ -1,5 +1,5 @@
 ## Developer
-
+Aplikasi ini dibuat sebagai tugas akhir dari Praktikum Pemrograman Berorientasi Objek.
 1. M. Fadhil Mahendra (20/460550/TK/51139)
 2. M. Iqbal Masykuri  (20/460555/TK/51144)
 
@@ -12,7 +12,7 @@
 > - <a href="#cehat">CeHat</a></li>
 >    -  <a href="#pengenalan">Introduksi</a>
 >    - <a href="#classDiagram">Class Diagram</a>
->    - <a href="#database">Entity Diagram</a>
+>    - <a href="#database">Diagram Basis Data</a>
 > - <a href="#petunjuk">Petunjuk Penggunaan</a>
 >      - <a href="#admin">Administrator</a>
 >        - <a href="#data">1) Mengelola Data di Menu Admin, Penyakit, Gejala, dan Obat</a>
@@ -28,16 +28,16 @@
 <h1 id="cehat">CeHat</h1>
 <h2 id="pengenalan">Introduksi</h2>
 
-**CeHat** merupakan aplikasi cek kesehatan yang dapat diakses melalui desktop dengan fungsi utama untuk mendiagnosis penyakit yang sedang dialami oleh seseorang berdasarkan jawaban atas pertanyaan yang terkait gejala-gejala yang sedang dialaminya. Aplikasi ini dibuat sebagai tugas praktikum mata kuliah Pemrograman Berorientasi Objek.
+**CeHat** merupakan aplikasi cek kesehatan yang dapat diakses melalui desktop dengan fungsi utama untuk mendiagnosis penyakit yang sedang dialami oleh seseorang berdasarkan jawaban atas pertanyaan yang terkait gejala-gejala yang sedang dialaminya.
 
 
 <h2 id="classDiagram">Class Diagram</h2>
 
 ![image](https://user-images.githubusercontent.com/71614957/115813677-cde0ca00-a41d-11eb-93ed-aeb7adc5ff44.png)
 
-<h2 id="database">Diagram Database</h2>
+<h2 id="database">Diagram Basis Data</h2>
 
-![image](https://user-images.githubusercontent.com/71614957/117397163-b6c5d000-af25-11eb-8e86-cdaee4182da7.png)
+![EntityDesignerDiagram](https://user-images.githubusercontent.com/71614957/121780787-10c45000-cbcc-11eb-8f9b-39e9152a6af2.jpg)
 
 
 <h1 id="petunjuk">Petunjuk Penggunaan</h1>

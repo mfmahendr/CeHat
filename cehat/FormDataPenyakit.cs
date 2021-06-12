@@ -225,5 +225,10 @@ namespace cehat
                                        .Where(x => x.Nama.Contains(tbCari.Text) || x.DetailPenyakit.Contains(tbCari.Text))
                                        .Select(x => new { x.Id, x.Nama, Detail = x.DetailPenyakit }).ToList();
         }
+
+        private void FormDataPenyakit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

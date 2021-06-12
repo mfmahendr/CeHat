@@ -235,6 +235,7 @@ namespace cehat
             this.Name = "FormAturanObat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAturanObat";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAturanObat_FormClosed);
             this.Load += new System.EventHandler(this.FormAturanObat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

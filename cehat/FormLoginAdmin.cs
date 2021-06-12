@@ -103,6 +103,11 @@ namespace cehat
             this.Close();
         }
         #endregion
+
+        private void FormLoginAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 

@@ -224,5 +224,10 @@ namespace cehat
         {
             dataGridView1.DataSource = Akses.Tabel().Admins.Where(y => y.Username.Contains(tbCari.Text) || y.Password.Contains(tbCari.Text)).ToList();
         }
+
+        private void FormDataAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

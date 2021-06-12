@@ -292,5 +292,10 @@ namespace cehat
                                        .Where(x => x.Nama.Contains(tbCari.Text) || x.DosisObat.Contains(tbCari.Text) || x.EfekObat.Contains(tbCari.Text))
                                        .Select(x => new { x.Id, x.Nama, Dosis = x.DosisObat, EfekSamping = x.EfekObat }).ToList();
         }
+
+        private void FormDataObat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

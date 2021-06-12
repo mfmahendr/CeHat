@@ -105,5 +105,10 @@ namespace cehat
             this.Hide();
         }
         #endregion
+
+        private void FormHasilDiagnosis_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

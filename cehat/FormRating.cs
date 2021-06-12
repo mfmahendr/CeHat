@@ -85,5 +85,10 @@ namespace cehat
         {
             this.Close();
         }
+
+        private void FormRating_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

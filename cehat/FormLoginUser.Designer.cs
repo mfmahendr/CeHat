@@ -46,7 +46,7 @@ namespace cehat
             this.textBoxNama.Location = new System.Drawing.Point(459, 219);
             this.textBoxNama.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNama.Name = "textBoxNama";
-            this.textBoxNama.Size = new System.Drawing.Size(258, 30);
+            this.textBoxNama.Size = new System.Drawing.Size(258, 26);
             this.textBoxNama.TabIndex = 0;
             // 
             // pictureBox1
@@ -118,6 +118,7 @@ namespace cehat
             this.Name = "FormLoginUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLoginUser";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLoginUser_FormClosed);
             this.Load += new System.EventHandler(this.FormLoginUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

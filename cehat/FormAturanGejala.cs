@@ -224,5 +224,9 @@ namespace cehat
         }
         #endregion
 
+        private void FormAturanGejala_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

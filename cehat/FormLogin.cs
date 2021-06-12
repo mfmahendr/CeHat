@@ -64,5 +64,15 @@ namespace cehat
         {
             this.Close();
         }
+
+        private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

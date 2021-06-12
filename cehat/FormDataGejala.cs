@@ -200,6 +200,11 @@ namespace cehat
             dataGridView1.DataSource = Akses.Tabel().Gejalas.Where(x => x.DetailGejala.Contains(tbCari.Text))
                                        .Select(x => new { x.Id, Gejala = x.DetailGejala }).ToList();
         }
+
+        private void FormDataGejala_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 

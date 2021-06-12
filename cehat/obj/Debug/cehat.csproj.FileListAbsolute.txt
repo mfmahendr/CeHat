@@ -60,3 +60,4 @@ D:\cehat\cehat\obj\Debug\cehat.csproj.CoreCompileInputs.cache
 D:\cehat\cehat\obj\Debug\cehat.csproj.CopyComplete
 D:\cehat\cehat\bin\Debug\DBCehat.mdf
 D:\cehat\cehat\bin\Debug\DBCehat_log.ldf
+C:\Users\LENOVO\source\repos\CeHat\cehat\obj\Debug\cehat.FormTentangAplikasi.resources

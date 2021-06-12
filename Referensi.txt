@@ -1,7 +1,0 @@
-Algoritma yang diterapkan akinator:
-  - https://informatika.stei.itb.ac.id/~rinaldi.munir/Matdis/2013-2014/Makalah2013/MakalahIF2120-2013-088.pdf
-  - https://informatika.stei.itb.ac.id/~rinaldi.munir/Matdis/2012-2013/Makalah2012/Makalah-IF2091-2012-009.pdf
- 
-Source code aplikasi yang mirip: 
-  - github.com/prixa-ai/prixa-proto (Prixa)
-  - github.com/ilenburg/guessing-game (Pokemon Guessing Game)

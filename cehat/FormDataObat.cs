@@ -26,7 +26,7 @@ namespace cehat
             InitializeComponent();
         }
 
-        private void displayData()
+        private void DisplayData()
         {
             try
             {
@@ -40,7 +40,7 @@ namespace cehat
             }
         }
 
-        private void resetTb()
+        private void Reset()
         {
             textBoxNamaObat.Text = "";
             textBoxDosisObat.Text = "";
@@ -54,8 +54,8 @@ namespace cehat
        
         private void FormDataObat_Load(object sender, EventArgs e)
         {
-            displayData();
-            resetTb();
+            DisplayData();
+            Reset();
 
             lblCari.BackColor = System.Drawing.Color.Transparent;
             dataGridView1.Columns[0].Width = 5;
@@ -106,14 +106,14 @@ namespace cehat
             catch (DbEntityValidationException) { MessageBox.Show("Data informasinya tidak boleh kosong dan tidak boleh didahului spasi"); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            resetTb();
-            displayData();
+            Reset();
+            DisplayData();
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            resetTb();
-            displayData();
+            Reset();
+            DisplayData();
         }
 
         private void buttonUbah_Click(object sender, EventArgs e)
@@ -184,8 +184,8 @@ namespace cehat
             catch (DbEntityValidationException) { MessageBox.Show("Data informasinya tidak boleh kosong dan tidak boleh didahului spasi"); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            displayData();
-            resetTb();
+            DisplayData();
+            Reset();
         }
 
         private void buttonHapus_Click(object sender, EventArgs e)
@@ -194,8 +194,8 @@ namespace cehat
             {
                 if (obat.Hapus(id: id))
                 {
-                    displayData();
-                    resetTb();
+                    DisplayData();
+                    Reset();
                     MessageBox.Show("Data berhasil dihapus!");
                 }
                 else { MessageBox.Show("Data gagal dihapus!"); }

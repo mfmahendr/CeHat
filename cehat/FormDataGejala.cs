@@ -16,12 +16,23 @@ namespace cehat
         private readonly Gejala gejala = new Gejala();
         private int id;
 
+        // agar form draggable walaupun borderless
+        bool mousedown;
+        private Point offset;
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mousedown = true;
+        }
+
         public FormDataGejala()
         {
             InitializeComponent();
         }
 
-        private void displayData()
+        private void DisplayData()
         {
             try
             {
@@ -34,7 +45,7 @@ namespace cehat
             
         }
 
-        private void resetTb()
+        private void Reset()
         {
             textBox1.Text = "";
 
@@ -46,8 +57,8 @@ namespace cehat
         
         private void FormDataGejala_Load(object sender, EventArgs e)
         {
-            displayData();
-            resetTb();
+            DisplayData();
+            Reset();
 
             lblCari.BackColor = System.Drawing.Color.Transparent;
             dataGridView1.Columns[0].Width = 50;
@@ -66,8 +77,8 @@ namespace cehat
                     }
                     else { MessageBox.Show("Gejala baru gagal ditambahkan, kemungkinan karena gejala yang ditambahkan sudah ada"); }
 
-                    resetTb();
-                    displayData();
+                    Reset();
+                    DisplayData();
                 }
                 catch (Exception ex) { MessageBox.Show(ex.Message); }
             }
@@ -86,8 +97,8 @@ namespace cehat
                 if (gejala.Ubah(id, textBox1.Text))
                 {
                     MessageBox.Show("Data berhasil diubah!");
-                    displayData();
-                    resetTb();
+                    DisplayData();
+                    Reset();
                 }
                 else { MessageBox.Show("Data gagal diubah, kemungkinan karena gejala yang ditambahkan sudah ada"); }
             }
@@ -104,23 +115,13 @@ namespace cehat
             {
                 if (gejala.Hapus(id: id))
                 {
-                    displayData();
-                    resetTb();
+                    DisplayData();
+                    Reset();
                     MessageBox.Show("Data berhasil dihapus!");
                 }
                 else { MessageBox.Show("Data gagal dihapus!"); }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message + "\n" + ex.StackTrace); }
-        }
-
-        // agar form draggable walaupun borderless
-        bool mousedown;
-        private Point offset;
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            offset.X = e.X;
-            offset.Y = e.Y;
-            mousedown = true;
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -160,8 +161,8 @@ namespace cehat
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            resetTb();
-            displayData();
+            Reset();
+            DisplayData();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

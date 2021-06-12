@@ -10,11 +10,12 @@ namespace cehat
     using System.Windows.Forms;
 
     [Table("Admin")]
-    public partial class Admin
+    public partial class Admin : IPerson
     {
         private readonly CeHatContext dbo = Akses.Tabel();
-        bool status;
+        private bool status;
 
+        [Key]
         public int Id { get; set; }
 
         [StringLength(20)]
@@ -23,11 +24,9 @@ namespace cehat
         [StringLength(20)]
         public string Password { get; set; }
 
-
-
         public List<Admin> GetListSemuaDataBerdasarkan()
         {
-            return dbo.Admins.Select(x => x).ToList();
+            return dbo.Admins.OrderBy(x => x.Id).ToList();
         }
 
         public List<Admin> GetListSemuaDataBerdasarkan(string username, string password)

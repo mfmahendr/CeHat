@@ -40,7 +40,7 @@ namespace cehat
             }
         }
 
-        private void ResetTb()
+        private void Reset()
         {
             textBox1.Text = "";
             textBox2.Text = "";
@@ -54,7 +54,7 @@ namespace cehat
         private void FormDataAdmin_Load(object sender, EventArgs e)
         {
             DisplayData();
-            ResetTb();
+            Reset();
 
             dataGridView1.Columns[0].Width = 30;
         }
@@ -74,7 +74,7 @@ namespace cehat
                         MessageBox.Show("Username sudah digunakan, coba lagi!");
                     }
 
-                    ResetTb();
+                    Reset();
                     DisplayData();
                 }
                 else
@@ -122,7 +122,7 @@ namespace cehat
                 }
 
                 DisplayData();
-                ResetTb();
+                Reset();
             }
             catch (DbEntityValidationException) { MessageBox.Show("Data informasinya tidak boleh kosong dan tidak boleh didahului spasi"); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -135,7 +135,7 @@ namespace cehat
                 if (admin.Hapus(Id: id))
                 {
                     DisplayData();
-                    ResetTb();
+                    Reset();
                     MessageBox.Show("Data berhasil dihapus!");
                 }
             }
@@ -186,7 +186,7 @@ namespace cehat
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            ResetTb();
+            Reset();
             DisplayData();
         }
 

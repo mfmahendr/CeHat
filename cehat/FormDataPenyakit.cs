@@ -40,7 +40,7 @@ namespace cehat
             }
         }
 
-        private void ResetTb()
+        private void Reset()
         {
             textBoxNamaPenyakit.Text = "";
             textBoxDeskripsi.Text = "";
@@ -54,7 +54,7 @@ namespace cehat
         private void FormDataPenyakit_Load(object sender, EventArgs e)
         {
             DisplayData();
-            ResetTb();
+            Reset();
 
             lblCari.BackColor = System.Drawing.Color.Transparent;
             dataGridView1.Columns[0].Width = 30;
@@ -72,7 +72,7 @@ namespace cehat
                     }
                     else { MessageBox.Show("Penyakit baru gagal ditambahkan, kemungkinan karena penyakit yang ditambahkan sudah ada"); }
 
-                    ResetTb();
+                    Reset();
                     DisplayData();
                 }
                 else
@@ -87,7 +87,7 @@ namespace cehat
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             DisplayData();
-            ResetTb();
+            Reset();
         }
 
         private void buttonUbah_Click(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace cehat
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             DisplayData();
-            ResetTb();
+            Reset();
         }
 
         private void buttonHapus_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace cehat
                 if (penyakit.Hapus(id: id))
                 {
                     DisplayData();
-                    ResetTb();
+                    Reset();
                     MessageBox.Show("Data berhasil dihapus!");
                 }
                 else { MessageBox.Show("Data gagal dihapus!"); }

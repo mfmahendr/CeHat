@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cehat
 {
-    public class User : Person
+    public class User
     {
         public static string Halo(string nama)
         {

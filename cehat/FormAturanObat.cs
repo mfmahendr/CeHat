@@ -45,7 +45,7 @@ namespace cehat
             comboBoxObat.DataSource = obat.GetListNamaObat().ToList();
         }
 
-        private void ResetTb()
+        private void Reset()
         {
             comboBoxPenyakit.SelectedItem = null;
             comboBoxObat.SelectedItem = null;
@@ -115,7 +115,7 @@ namespace cehat
             comboBoxObat.Items.Clear();
 
             IsiComboBox();
-            ResetTb();
+            Reset();
             DisplayData();
 
             dataGridView1.Columns[0].Width = 100;
@@ -154,7 +154,7 @@ namespace cehat
                 }
             }
             catch (Exception ex) { MessageBox.Show("Sumber exception" + ex.Source + "\n Stack Trace: " + ex.StackTrace + "\n Message: " + ex.Message); }
-            ResetTb();
+            Reset();
             DisplayData();
         }
 
@@ -172,12 +172,12 @@ namespace cehat
             catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.Message + "\n" + ex.StackTrace); }
 
             DisplayData();
-            ResetTb();
+            Reset();
         }
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            ResetTb();
+            Reset();
             DisplayData();
         }
 

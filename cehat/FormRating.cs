@@ -24,7 +24,7 @@ namespace cehat
             InitializeComponent();
         }
 
-        private void reset()
+        private void Reset()
         {
             textBox1.Text = "";
             comboBox1.SelectedItem = null;
@@ -34,7 +34,7 @@ namespace cehat
             comboBox1.DataSource = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             label1.Text = Convert.ToString(rating.Rataan());
-            reset();
+            Reset();
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace cehat
                 rating.Tambah(int.Parse(comboBox1.Text), textBox1.Text);
 
                 label1.Text = Convert.ToString(rating.Rataan());
-                reset();
+                Reset();
                 MessageBox.Show("Terimakasih atas evaluasinya!");
             }
             else

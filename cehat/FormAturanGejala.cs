@@ -51,7 +51,7 @@ namespace cehat
             comboBoxGejala.DataSource = gejala.GetListDetailGejala();
         }
 
-        private void ResetTb()
+        private void Reset()
         {
             comboBoxPenyakit.SelectedItem = null;
             comboBoxGejala.SelectedItem = null;
@@ -95,7 +95,7 @@ namespace cehat
             comboBoxGejala.Items.Clear();
 
             IsiComboBox();
-            ResetTb();
+            Reset();
             DisplayData();
 
             dataGridView1.Columns[0].Width = 100;
@@ -144,7 +144,7 @@ namespace cehat
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.StackTrace + "\n" + ex.Message + "\n" + ex.HelpLink); }
-            ResetTb();
+            Reset();
             DisplayData();
         }
         
@@ -162,12 +162,12 @@ namespace cehat
             catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.Message + "\n" + ex.StackTrace); }
 
             DisplayData();
-            ResetTb();
+            Reset();
         }
    
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            ResetTb();
+            Reset();
             DisplayData();
         }
 

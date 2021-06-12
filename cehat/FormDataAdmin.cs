@@ -132,12 +132,22 @@ namespace cehat
         {
             try
             {
-                if (admin.Hapus(Id: id))
+                string message = "Yakin ingin hapus data?";
+                string caption = "Konfirmasi";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    DisplayData();
-                    Reset();
-                    MessageBox.Show("Data berhasil dihapus!");
+                    if (admin.Hapus(Id: id))
+                    {
+                        DisplayData();
+                        Reset();
+                        MessageBox.Show("Data berhasil dihapus!");
+                    }
                 }
+                    
             }
             catch (Exception ex) { MessageBox.Show(ex.Message + "\n" + ex.StackTrace); }
         }

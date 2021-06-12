@@ -152,11 +152,21 @@ namespace cehat
         {
             try
             {
-                if (aturan.Hapus(idPenyakit, idGejala))
+                string message = "Yakin ingin hapus data?";
+                string caption = "Konfirmasi";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+                if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    MessageBox.Show("Data berhasil dihapus!");
+                    if (aturan.Hapus(idPenyakit, idGejala))
+                    {
+                        MessageBox.Show("Data berhasil dihapus!");
+                    }
+                    else { MessageBox.Show("Data gagal dihapus!"); }
                 }
-                else { MessageBox.Show("Data gagal dihapus!"); }
+                    
             }
             catch (ArgumentNullException) { MessageBox.Show("Data gagal dihapus, kemungkinan karena terdapat dua atau lebih record"); }
             catch (Exception ex) { MessageBox.Show(ex.Source + "\n" + ex.Message + "\n" + ex.StackTrace); }

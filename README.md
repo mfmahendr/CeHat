@@ -19,7 +19,7 @@
 >        - <a href="#rules">2) Mengelola <i>Rules</i> di Menu Aturan Gejala dan Aturan Obat</a>
 >      - <a href="#pengguna">Pengguna</a>
 >         - <a href="#diagnosis">Melakukan Diagnosis</a>
->         - <a href="#rating">Melakukan Diagnosis</a>
+>         - <a href="#rating">Memberi Rating</a>
 > 
 > </nav>
 > 

@@ -200,7 +200,7 @@ namespace cehat
             this.lblCari.Font = new System.Drawing.Font("Arial Black", 10F);
             this.lblCari.Location = new System.Drawing.Point(396, 95);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(71, 28);
+            this.lblCari.Size = new System.Drawing.Size(60, 24);
             this.lblCari.TabIndex = 50;
             this.lblCari.Text = "Cari :";
             this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -210,7 +210,7 @@ namespace cehat
             this.tbCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCari.Location = new System.Drawing.Point(471, 94);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(280, 30);
+            this.tbCari.Size = new System.Drawing.Size(280, 26);
             this.tbCari.TabIndex = 49;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
@@ -237,6 +237,7 @@ namespace cehat
             this.Name = "FormDataGejala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDataGejala";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDataGejala_FormClosed);
             this.Load += new System.EventHandler(this.FormDataGejala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

@@ -54,7 +54,7 @@ namespace cehat
             this.textBoxNamaPenyakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxNamaPenyakit.Location = new System.Drawing.Point(49, 189);
             this.textBoxNamaPenyakit.Name = "textBoxNamaPenyakit";
-            this.textBoxNamaPenyakit.Size = new System.Drawing.Size(302, 30);
+            this.textBoxNamaPenyakit.Size = new System.Drawing.Size(302, 26);
             this.textBoxNamaPenyakit.TabIndex = 0;
             // 
             // textBoxDeskripsi
@@ -206,7 +206,7 @@ namespace cehat
             this.tbCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCari.Location = new System.Drawing.Point(461, 96);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(280, 30);
+            this.tbCari.Size = new System.Drawing.Size(280, 26);
             this.tbCari.TabIndex = 47;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
@@ -217,7 +217,7 @@ namespace cehat
             this.lblCari.Font = new System.Drawing.Font("Arial Black", 10F);
             this.lblCari.Location = new System.Drawing.Point(386, 96);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(71, 28);
+            this.lblCari.Size = new System.Drawing.Size(60, 24);
             this.lblCari.TabIndex = 48;
             this.lblCari.Text = "Cari :";
             this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -245,6 +245,7 @@ namespace cehat
             this.Name = "FormDataPenyakit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDataPenyakit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDataPenyakit_FormClosed);
             this.Load += new System.EventHandler(this.FormDataPenyakit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

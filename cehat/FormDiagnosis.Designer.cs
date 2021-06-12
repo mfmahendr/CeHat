@@ -49,7 +49,7 @@ namespace cehat
             this.clGejala.HorizontalScrollbar = true;
             this.clGejala.Location = new System.Drawing.Point(28, 139);
             this.clGejala.Name = "clGejala";
-            this.clGejala.Size = new System.Drawing.Size(394, 247);
+            this.clGejala.Size = new System.Drawing.Size(394, 231);
             this.clGejala.TabIndex = 0;
             // 
             // buttonSubmit
@@ -121,6 +121,7 @@ namespace cehat
             this.Name = "FormDiagnosis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiagnosis";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDiagnosis_FormClosed);
             this.Load += new System.EventHandler(this.FormDiagnosis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

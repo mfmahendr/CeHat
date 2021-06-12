@@ -88,6 +88,7 @@ namespace cehat
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormTentangAplikasi";
             this.Text = "FormTentangAplikasi";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTentangAplikasi_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);

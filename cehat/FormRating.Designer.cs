@@ -148,6 +148,7 @@ namespace cehat
             this.Name = "FormRating";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRating";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormRating_FormClosed);
             this.Load += new System.EventHandler(this.FormRating_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

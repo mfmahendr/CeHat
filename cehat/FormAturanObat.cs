@@ -239,5 +239,9 @@ namespace cehat
         }
         #endregion
 
+        private void FormAturanObat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

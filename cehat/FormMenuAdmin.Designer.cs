@@ -173,6 +173,7 @@ namespace cehat
             this.Name = "FormMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenuAdmin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenuAdmin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDataAdmin)).EndInit();

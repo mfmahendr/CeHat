@@ -47,7 +47,7 @@ namespace cehat
             this.textBoxUsername.Location = new System.Drawing.Point(460, 217);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(258, 30);
+            this.textBoxUsername.Size = new System.Drawing.Size(258, 26);
             this.textBoxUsername.TabIndex = 0;
             // 
             // textBoxPassword
@@ -57,7 +57,7 @@ namespace cehat
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(258, 30);
+            this.textBoxPassword.Size = new System.Drawing.Size(258, 26);
             this.textBoxPassword.TabIndex = 1;
             // 
             // pictureBox1
@@ -131,6 +131,7 @@ namespace cehat
             this.Name = "FormLoginAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLoginAdmin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLoginAdmin_FormClosed);
             this.Load += new System.EventHandler(this.FormLoginAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

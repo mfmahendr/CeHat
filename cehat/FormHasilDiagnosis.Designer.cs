@@ -48,7 +48,7 @@ namespace cehat
             this.tbNamaPenyakit.Location = new System.Drawing.Point(34, 145);
             this.tbNamaPenyakit.Name = "tbNamaPenyakit";
             this.tbNamaPenyakit.ReadOnly = true;
-            this.tbNamaPenyakit.Size = new System.Drawing.Size(312, 30);
+            this.tbNamaPenyakit.Size = new System.Drawing.Size(312, 26);
             this.tbNamaPenyakit.TabIndex = 0;
             // 
             // tbDeskripsiPenyakit
@@ -67,7 +67,7 @@ namespace cehat
             this.tbNamaObat.Location = new System.Drawing.Point(448, 145);
             this.tbNamaObat.Name = "tbNamaObat";
             this.tbNamaObat.ReadOnly = true;
-            this.tbNamaObat.Size = new System.Drawing.Size(312, 30);
+            this.tbNamaObat.Size = new System.Drawing.Size(312, 26);
             this.tbNamaObat.TabIndex = 2;
             // 
             // tbDosis
@@ -165,6 +165,7 @@ namespace cehat
             this.Name = "FormHasilDiagnosis";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHasilDiagnosis";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormHasilDiagnosis_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

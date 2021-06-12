@@ -95,5 +95,10 @@ namespace cehat
             data.Show();
             this.Hide();
         }
+
+        private void FormMenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

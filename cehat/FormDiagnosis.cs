@@ -142,5 +142,10 @@ namespace cehat
 
             Reset();
         }
+
+        private void FormDiagnosis_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

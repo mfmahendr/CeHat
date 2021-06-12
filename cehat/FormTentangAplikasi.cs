@@ -51,5 +51,10 @@ namespace cehat
         {
             mousedown = false;
         }
+
+        private void FormTentangAplikasi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

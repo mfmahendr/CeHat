@@ -54,7 +54,7 @@ namespace cehat
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox1.Location = new System.Drawing.Point(48, 188);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 30);
+            this.textBox1.Size = new System.Drawing.Size(293, 26);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
@@ -62,7 +62,7 @@ namespace cehat
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBox2.Location = new System.Drawing.Point(48, 260);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(293, 30);
+            this.textBox2.Size = new System.Drawing.Size(293, 26);
             this.textBox2.TabIndex = 1;
             // 
             // panel1
@@ -203,7 +203,7 @@ namespace cehat
             this.tbCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCari.Location = new System.Drawing.Point(469, 93);
             this.tbCari.Name = "tbCari";
-            this.tbCari.Size = new System.Drawing.Size(280, 30);
+            this.tbCari.Size = new System.Drawing.Size(280, 26);
             this.tbCari.TabIndex = 43;
             this.tbCari.TextChanged += new System.EventHandler(this.tbCari_TextChanged);
             // 
@@ -214,7 +214,7 @@ namespace cehat
             this.lblCari.Font = new System.Drawing.Font("Arial Black", 10F);
             this.lblCari.Location = new System.Drawing.Point(394, 94);
             this.lblCari.Name = "lblCari";
-            this.lblCari.Size = new System.Drawing.Size(71, 28);
+            this.lblCari.Size = new System.Drawing.Size(60, 24);
             this.lblCari.TabIndex = 44;
             this.lblCari.Text = "Cari :";
             this.lblCari.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -242,6 +242,7 @@ namespace cehat
             this.Name = "FormDataAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDataAdmin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDataAdmin_FormClosed);
             this.Load += new System.EventHandler(this.FormDataAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

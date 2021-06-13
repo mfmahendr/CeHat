@@ -42,7 +42,7 @@ Aplikasi ini dibuat sebagai tugas akhir dari Praktikum Pemrograman Berorientasi 
 
 <h1 id="petunjuk">Petunjuk Penggunaan</h1>
 
-Pertama yang perlu Anda lakukan adalah membuka aplikasi, tunggu hingga proses loading aplikasinya selesai. Setelah proses loading selesai, maka akan muncul tombol "Masuk". Klik tombol masuk tersebut sehingga muncul dua opsi untuk menggunakan aplikasinya, Anda dapat memilih login ke aplikasi sebagai Administrator atau sebagai Pengguna biasa, Anda dapat memilih salah satu opsi. Selanjutnya ikuti petunjuk penggunaan berikut sesuai dengan opsi masuk yang Anda pilih.
+Sebelum menggunakan aplikasi, **penting** untuk diketahui bahwa database yang dipakai dalam aplikasi ini merupakan _local database_ sehingga Anda harus memiliki DBMS-nya (dalam hal ini, SQL Server). Pertama yang perlu Anda lakukan adalah membuka aplikasi, tunggu hingga proses loading aplikasinya selesai. Setelah proses loading selesai, maka akan muncul tombol "Masuk". Klik tombol masuk tersebut sehingga muncul dua opsi untuk menggunakan aplikasinya, Anda dapat memilih login ke aplikasi sebagai Administrator atau sebagai Pengguna biasa, Anda dapat memilih salah satu opsi. Selanjutnya ikuti petunjuk penggunaan berikut sesuai dengan opsi masuk yang Anda pilih.
 
 <h2 id="admin">Administrator</h2>
 

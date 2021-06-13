@@ -7,7 +7,6 @@ C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\EntityFramework.dll
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\EntityFramework.xml
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.csprojAssemblyReference.cache
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.FormAturanGejala.resources
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.FormAturanObat.resources
 C:\Users\LENOVO\Source\Repos\CeHat\cehat\obj\Debug\cehat.FormDataAdmin.resources
@@ -62,3 +61,4 @@ D:\cehat\cehat\bin\Debug\DBCehat.mdf
 D:\cehat\cehat\bin\Debug\DBCehat_log.ldf
 C:\Users\LENOVO\source\repos\CeHat\cehat\obj\Debug\cehat.FormTentangAplikasi.resources
 D:\cehat\cehat\obj\Debug\cehat.FormTentangAplikasi.resources
+C:\Users\LENOVO\source\repos\CeHat\cehat\obj\Debug\cehat.csprojAssemblyReference.cache

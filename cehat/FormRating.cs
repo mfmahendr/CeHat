@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace cehat
 {
@@ -76,9 +75,9 @@ namespace cehat
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
             FormMenuUser menu = new FormMenuUser();
             menu.Show();
+            this.Hide();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

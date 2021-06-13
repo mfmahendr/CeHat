@@ -8,7 +8,7 @@ namespace cehat
     public partial class CeHatContext : DbContext
     {
         public CeHatContext()
-            : base("name=cehat.Properties.Settings.CeHatContext")
+            : base("CeHatContext")
         {
         }
 

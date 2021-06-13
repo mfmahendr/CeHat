@@ -24,7 +24,7 @@ namespace cehat
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             FormMenuUser menu = new FormMenuUser();
             menu.Show();
         }

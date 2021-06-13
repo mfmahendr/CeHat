@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace cehat
 {
@@ -150,7 +149,7 @@ namespace cehat
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             FormMenuAdmin menu = new FormMenuAdmin();
             menu.Show();
         }
